@@ -1,125 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MVP</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-</html>
-
 <body>
-
-    <h1 class="Überschrift"> Monarchistische Volkspartei (MVP) </h1>
-
-
-
-    <table class="tabelle">
-        <tr>
-
-
-
-
-
-
-        </tr>
-        <tr class="zwischen">
-            <th>1.Staats- und Gesellschaftsordnung: </th>
-        </tr>
-        <tr class="allgemein">
-            <th>Deutschland als parlamentarische Demokratie mit direktdemokratischen Elementen: </th>
-        </tr>
-        <tr class="allgemein">
-            <th>Wichtige Entscheidungen (z. B. Außenpolitik, große Infrastrukturprojekte) sollen durch verbindliche
-                Volksabstimmungen entschieden werden. </th>
-        </tr>
-        <tr class="allgemein">
-            <th>Einführung eines dauerhaften digitalen Bürgerforums, wo Bürger über politische Themen diskutieren und
-                Vorschläge einbringen können. </th>
-        </tr>
-        <tr>
-            <th></th>
-        </tr>
-        <tr>
-            <th></th>
-        </tr>
-        <tr class="zwischen">
-            <th>2. Wiederbelebung der Monarchie als kulturelles Symbol: </th>
-        </tr>
-        <tr class="allgemein">
-            <th>Ein deutscher Kaiser/König (aus historischem Adel oder durch Volkswahl bestimmt) soll als unpolitischer
-                Repräsentant fungieren, ähnlich wie ein Bundespräsident, aber mit traditionellem Zeremoniell.</th>
-        </tr>
-        <tr class="allgemein">
-            <th>Der Monarch hat keine Regierungsmacht, sondern dient der Identitätsstiftung und internationalen
-                Repräsentation. </th>
-        <tr class="zwischen">
-            <th>3. Reform der Nationalsymbole: </th>
-        </tr>
-        <tr class="allgemein">
-            <th>Die deutsche Flagge bleibt schwarz-rot-gold, kann aber optional um eine stilisierte Krone ergänzt werden
-                (z. B. für staatliche Gebäude). </th>
-        </tr>
-        <tr class="allgemein">
-            <th>Förderung von patriotischem Geschichtsbewusstsein ohne Revanchismus. </th>
-        </tr>
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <img class="logoimg" src="img/logo.png" alt="MVP Logo">
+            </a>
+            <nav>
+                <ul class="headerlinks">
+                    <li><a href="./ganzesprogramm.html">Wahlprogramm</a></li>
+                    <li><a href="./bewerben.html">Mitglied werden</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
 
-        <table>
+    <main>
+        <section class="headline">
+            <h1>Monarchistische Volkspartei (MVP)</h1>
+            <h2>Leitspruch: „Tradition. Demokratie. Volkswille.“</h2>
+        </section>
 
-            <table border="3">
-                <tr id="ausgabe" class="name"></tr>
-            </table>
+        <p>Deutschland soll eine Demokratie sein, in der das Volk stark mitbestimmt und zugleich Tradition sichtbar
+            bleibt. Bei uns vereint der Kaiser oder die Kaiserin die Rolle von Bundespräsident und Kanzler. Gewählt vom
+            Volk, führt er oder sie die Regierung und repräsentiert Deutschland nach innen und außen. Gleichzeitig
+            vermittelt der Kaiser die Ergebnisse von Volksabstimmungen, informiert über neue Gesetze und hält die
+            Verbindung zwischen Politik und Bürgern lebendig.</p>
+
+        <p>Das Parlament bleibt stark und unabhängig. Es macht die Gesetze, kontrolliert die Regierung und sorgt dafür,
+            dass Entscheidungen fair und ausgewogen getroffen werden. Bei besonders wichtigen Themen kann das Volk
+            direkt mitbestimmen – über Abstimmungen und unser digitales Bürgerforum.</p>
+
+        <p>Unsere Nationalsymbole bleiben schwarz, rot und gold. Optional kann eine stilisierte Krone den historischen
+            Charakter betonen. Wir wollen ein patriotisches Geschichtsbewusstsein fördern, das Tradition, Demokratie und
+            Zusammenhalt vereint – ohne auf Vergangenes zu verzichten oder alte Konflikte neu zu entfachen.</p>
+
+        <p>Der Kaiser oder die Kaiserin wird für vier Jahre direkt vom Volk gewählt. Jede Person mit deutscher
+            Staatsbürgerschaft kann kandidieren. So entscheiden die Bürger selbst, ob die MVP ihre Vision gut umsetzt
+            oder ob es Zeit für Veränderung ist.</p>
+
+
+
+    </main>
+
+    <footer id="kontakt">
+        <p>© 2025 Monarchistische Volkspartei (MVP) | Kontakt: info@mvp.de</p>
+    </footer>
 </body>
 
-<script>
-
-    let name = prompt('Wie lautet dein Name?'); document.getElementById('ausgabe').innerText = 'Willkommen ' + name + ' ✌';
-
-
-
-</script>
-
-<style>
-    .Überschrift {
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        background-color: rgb(255, 255, 255);
-        font-size: 100px;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        box-shadow: 8px 6px 17px 12px rgba(0, 0, 0, 0.82);
-        margin-right: 150px;
-        height: 200px;
-    }
-
-    .tabelle {
-        display: flex;
-        text-align: left;
-        width: 1650px;
-        font-family: 'Times New Roman', Times, serif;
-        margin-top: 90px;
-    }
-
-    .zwischen { 
-        font-size: 50px;
-    }
-
-    body {
-        margin: 0;
-        background-color: rgb(120, 146, 170);
-    }
-
-    .allgemein {
-        font-size: 20px;
-    }
-
-    .name {
-        font-size: 100px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        width: 300px;
-        margin-top: 10px;
-        background-color: rgb(38, 104, 190);
-    }
-</style>
+</html>
