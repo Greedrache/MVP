@@ -11,11 +11,17 @@
 <body>
     <header>
         <div class="header-container">
-            <a href="index.html">
-                <img class="logoimg" src="img/logo.png" alt="MVP Logo">
-            </a>
+            <a href="./index.html"><img class="logoimg" src="img/logo.png" alt="Logo"></a>
+
+            <!-- Burger Icon -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <nav>
-                <ul class="headerlinks">
+                <ul class="headerlinks" id="headerlinks">
                     <li><a href="./ganzesprogramm.html">Wahlprogramm</a></li>
                     <li><a href="./bewerben.html">Mitglied werden</a></li>
                     <li><a href="#kontakt">Kontakt</a></li>
@@ -23,7 +29,6 @@
             </nav>
         </div>
     </header>
-
 
     <main>
         <section class="headline">
@@ -49,13 +54,43 @@
             Staatsbürgerschaft kann kandidieren. So entscheiden die Bürger selbst, ob die MVP ihre Vision gut umsetzt
             oder ob es Zeit für Veränderung ist.</p>
 
-
-
+        <div class="cta-box">
+            <p>📖 Das gesamte Wahlprogramm findest du <a href="./ganzesprogramm.html">hier</a>.</p>
+            <p>✨ Du hast Interesse an einer Mitgliedschaft? <a href="./bewerben.html">Klicke hier</a> und werde Teil der
+                MVP!</p>
+        </div>
     </main>
 
+    <!-- Popup -->
+    <div id="successPopup" class="popup">
+        <p>✅ Mail erfolgreich versendet!</p>
+    </div>
+
     <footer id="kontakt">
-        <p>© 2025 Monarchistische Volkspartei (MVP) | Kontakt: info@mvp.de</p>
+        <p>© 2025 Monarchistische Volkspartei (MVP) | Kontakt: monarchistische.volkspartei@gmail.com</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const headerLinks = document.getElementById('headerlinks');
+
+        menuToggle.addEventListener('click', () => {
+            headerLinks.classList.toggle('active');
+        });
+
+        // Popup-Logik
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("success") === "1") {
+            const popup = document.getElementById("successPopup");
+            popup.style.display = "block";
+            setTimeout(() => {
+                popup.style.opacity = "0";
+                setTimeout(() => popup.remove(), 500);
+            }, 3000); // nach 3s ausblenden
+        }
+
+
+    </script>
 </body>
 
 </html>

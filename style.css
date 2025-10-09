@@ -53,7 +53,9 @@ main {
   text-align: center;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 20px 0;
 }
 
@@ -74,10 +76,12 @@ form {
   background-color: #F2F2F2;
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-form input, form textarea, form select {
+form input,
+form textarea,
+form select {
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -106,6 +110,11 @@ footer {
   margin-top: 50px;
   background-color: #C0392B;
   color: white;
+  word-wrap: break-word;
+  /* Lange Wörter umbrechen */
+  overflow-wrap: break-word;
+  /* Modernere Variante */
+  white-space: normal;
 }
 
 /* Responsive */
@@ -118,4 +127,134 @@ footer {
   main {
     margin: 20px;
   }
+}
+
+
+/* ---------- Responsive Header ---------- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: black;
+  border-radius: 3px;
+}
+
+/* Mobile Ansicht */
+@media (max-width: 768px) {
+  .header-container {
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .headerlinks {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #C0392B;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    width: 200px;
+    display: none;
+    /* Standard: ausgeblendet */
+    box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 10px 10px;
+  }
+
+  .headerlinks.active {
+    display: flex;
+    /* wird durch JS aktiviert */
+  }
+
+  .menu-toggle {
+    display: flex;
+    /* Burger-Icon sichtbar machen */
+  }
+}
+
+.headline h1 {
+  font-size: 2.5rem;
+  /* Desktop */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.headline h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-align: center;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .headline h1 {
+    font-size: 1.8rem;
+    /* Tablet */
+  }
+
+  .headline h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline h1 {
+    font-size: 1.5rem;
+    /* Smartphone */
+    line-height: 1.3;
+  }
+
+  .headline h2 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #27ae60;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 2000;
+}
+
+
+.cta-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.cta-box a {
+  font-weight: bold;
+  color: #e0b84c;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cta-box a:hover {
+  color: #cfa73e;
+  text-decoration: underline;
 }

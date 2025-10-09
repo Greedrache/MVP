@@ -2,57 +2,72 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitglied werden - MVP</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitglied werden - MVP</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <a href="index.html">
-                <img class="logoimg" src="img/logo.png" alt="MVP Logo">
-            </a>
-            <nav>
-                <ul class="headerlinks">
-                    <li><a href="./ganzesprogramm.html">Wahlprogramm</a></li>
-                    <li><a href="./bewerben.html">Mitglied werden</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="header-container">
+      <a href="./index.html"><img class="logoimg" src="img/logo.png" alt="Logo"></a>
 
+      <!-- Burger Icon -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-    <main>
-        <h1>Mitglied werden bei der MVP</h1>
-        <p>Willkommen! Wir freuen uns, dass du Teil unserer Bewegung werden möchtest. Als Mitglied der MVP
-            unterstützt du unsere Vision von Tradition, Demokratie und Volkswille aktiv mit.</p>
+      <nav>
+        <ul class="headerlinks" id="headerlinks">
+          <li><a href="./ganzesprogramm.html">Wahlprogramm</a></li>
+          <li><a href="./bewerben.html" class="active">Mitglied werden</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <section class="bewerbungsformular">
-            <h2>Bewerbungsformular</h2>
-            <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+  <main>
+    <h1>Mitglied werden bei der MVP</h1>
+    <p class="intro">
+      Willkommen! Wir freuen uns, dass du Teil unserer Bewegung werden möchtest.
+      Als Mitglied der MVP unterstützt du unsere Vision von Tradition, Demokratie und Volkswille aktiv mit.
+    </p>
 
-                <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" required>
+    <section class="bewerbungsformular">
+      <h2>Bewerbungsformular</h2>
+      <form action="https://formspree.io/f/xovkqjry" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
 
-                <label for="adresse">Adresse:</label>
-                <input type="text" id="adresse" name="adresse">
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required>
 
-                <label for="interesse">Warum möchtest du Mitglied werden?</label>
-                <textarea id="interesse" name="interesse" rows="5" required></textarea>
+        <label for="adresse">Adresse</label>
+        <input type="text" id="adresse" name="adresse">
 
-                <button type="submit">Bewerbung absenden</button>
-            </form>
-        </section>
-    </main>
+        <label for="warum">Warum möchtest du Mitglied werden?</label>
+        <textarea id="warum" name="warum" rows="5" required></textarea>
 
-    <footer>
-        <p>&copy; 2025 MVP – Alle Rechte vorbehalten</p>
-    </footer>
+        <button type="submit">Bewerbung absenden</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Monarchistische Volkspartei (MVP) | Kontakt: monarchistische.volkspartei@gmail.com</p>
+  </footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const headerLinks = document.getElementById('headerlinks');
+
+    menuToggle.addEventListener('click', () => {
+      headerLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>
