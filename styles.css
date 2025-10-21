@@ -1,4 +1,3 @@
-/* Header */
 header {
   background-color: #C0392B;
   box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.5);
@@ -6,6 +5,13 @@ header {
   top: 0;
   z-index: 1000;
 }
+
+.favicon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
 
 .header-container {
   display: flex;
@@ -16,7 +22,7 @@ header {
 
 .logoimg {
   width: 150px;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 .headerlinks {
@@ -112,7 +118,7 @@ footer {
   background-color: #C0392B;
   color: white;
   word-wrap: break-word;
-  /* Lange Wörter umbrechen */
+  /* Lange WÃ¶rter umbrechen */
   overflow-wrap: break-word;
   /* Modernere Variante */
   white-space: normal;
@@ -196,7 +202,7 @@ footer {
   margin-bottom: 1.5rem;
 }
 
-/* Für kleinere Bildschirme */
+/* FÃ¼r kleinere Bildschirme */
 @media (max-width: 768px) {
   .headline h1 {
     font-size: 1.8rem;
@@ -263,13 +269,122 @@ footer {
 
 .min-height {
   min-height: 100vh;
-  /* Stellt sicher, dass der Body mindestens die volle Höhe des Viewports einnimmt */
+  /* Stellt sicher, dass der Body mindestens die volle HÃ¶he des Viewports einnimmt */
   display: flex;
   flex-direction: column;
-  height: 100%; /* Stellt sicher, dass html und body die volle Höhe haben */
+  height: 100%; /* Stellt sicher, dass html und body die volle HÃ¶he haben */
 }
-.favicon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+
+.unterschrift {
+  width: 250px;
+  margin-top: 10px;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
+}
+
+.print-btn {
+  background-color: #f5f5f5;
+  color: #222;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.print-btn:hover {
+  background-color: #d1b464; /* Goldton passend zu MVP */
+  color: white;
+  border-color: #b49430;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+.print-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+
+footer {
+  background-color: #C0392B;
+  color: #fff;
+  padding: 20px 15px;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-logo img {
+  width: 55px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+.footer-logo p {
+  font-weight: 600;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.footer-links a {
+  color: #f8d46a; /* Gold */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 0.85rem;
+  transition: opacity 0.2s ease;
+}
+
+.footer-bottom a:hover {
+  opacity: 0.8;
+}
+
+/* Mobile Ansicht */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
 }

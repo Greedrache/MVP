@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nachweis der demokratischen Struktur – MVP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="./index.html"><img class="logoimg" src="img/logo.png" alt="Logo"></a>
+
+            <!-- Burger Icon -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav>
+                <ul class="headerlinks" id="headerlinks">
+                    <li><a href="./ganzesprogramm.html">Wahlprogramm</a></li>
+                    <li><a href="./bewerben.html">Mitglied werden</a></li>
+                    <li><a href="./kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Nachweis der demokratischen Struktur</h1>
+        <h2>MVP – Monarchistische Volkspartei</h2>
+
+        <section class="headline">
+            <h3>Grundsatz</h3>
+            <p>Die Monarchistische Volkspartei (MVP) ist gemäß ihrer Satzung nach demokratischen Grundsätzen organisiert
+                und
+                verpflichtet sich zur Einhaltung der freiheitlich-demokratischen Grundordnung der Bundesrepublik
+                Deutschland.</p>
+        </section>
+
+        <section class="headline">
+            <h3>Mitgliederrechte</h3>
+            <p>Alle Mitglieder haben gleiche Rechte innerhalb der Partei und können sich aktiv an der politischen
+                Willensbildung beteiligen.</p>
+        </section>
+
+        <section class="headline">
+            <h3>Vorstand &amp; Kontrolle</h3>
+            <p>Der Vorstand wird durch die Mitgliederversammlung frei gewählt und kann mit einfacher Mehrheit wieder
+                abgewählt werden.
+                Der Vorstand vertritt die Partei nach außen und führt die laufenden Geschäfte im Rahmen der Satzung.</p>
+        </section>
+
+        <section class="headline">
+            <h3>Höchstes Organ</h3>
+            <p>Die Mitgliederversammlung ist das höchste Organ der Partei. Sie entscheidet über alle wesentlichen
+                Angelegenheiten,
+                darunter Satzungsänderungen, politische Richtlinien und die Wahl des Vorstands.</p>
+        </section>
+
+        <section class="headline">
+            <h3>Beschlussfassung</h3>
+            <p>Beschlüsse werden grundsätzlich durch Mehrheitsentscheidungen gefasst (51&nbsp;% der Stimmen).
+                Satzungsänderungen bedürfen einer Zweidrittelmehrheit, wodurch ein breiter Konsens sichergestellt wird.
+            </p>
+        </section>
+
+        <section class="headline">
+            <h3>Bestätigung</h3>
+            <p><strong>Ort/Datum:</strong> Weidenhahn, den 21. 10. 2025</p>
+            <p><strong>Unterschrift:</strong></p>
+            <img src="img/unterschrift.png" alt="Unterschrift von Tim Thiele" class="unterschrift">
+            <p>Tim Thiele<br>Gründungsinitiator der MVP – Monarchistische Volkspartei</p>
+            <button class="print-btn" onclick="window.print()" aria-label="Seite drucken">
+                🖨️ Seite drucken
+            </button>
+
+        </section>
+    </main>
+
+    <footer id="kontakt">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="MVP Logo">
+                <p>Monarchistische Volkspartei (MVP)</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="./satzung.html">Satzung</a>
+                <a href="./nachweis-demokratie.html">Struktur</a>
+                <a href="./impressum.html">Impressum</a>
+                <a href="./kontakt.html">Kontakt</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 MVP – Monarchistische Volkspartei</p>
+                <p>
+                    <a href="mailto:monarchistische.volkspartei@gmail.com">
+                        monarchistische.volkspartei@gmail.com
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const headerLinks = document.getElementById('headerlinks');
+        menuToggle.addEventListener('click', () => {
+            headerLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
