@@ -51,6 +51,7 @@ main {
   margin: 50px auto;
   padding: 0 20px;
   text-align: center;
+  flex: 1;
 }
 
 h1,
@@ -115,6 +116,7 @@ footer {
   overflow-wrap: break-word;
   /* Modernere Variante */
   white-space: normal;
+  margin-top: auto;
 }
 
 /* Responsive */
@@ -257,4 +259,17 @@ footer {
 .cta-box a:hover {
   color: #cfa73e;
   text-decoration: underline;
+}
+
+.min-height {
+  min-height: 100vh;
+  /* Stellt sicher, dass der Body mindestens die volle Höhe des Viewports einnimmt */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Stellt sicher, dass html und body die volle Höhe haben */
+}
+.favicon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
 }

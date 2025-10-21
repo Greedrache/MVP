@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt – MVP</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+
+<body class="min-height">
+    <header>
+        <div class="header-container">
+            <a href="./index.html"><img class="logoimg" src="img/logo.png" alt="Logo"></a>
+
+            <!-- Burger Icon -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav>
+                <ul class="headerlinks" id="headerlinks">
+                    <li><a href="./ganzesprogramm.html">Wahlprogramm</a></li>
+                    <li><a href="./satzung.html" class="active">Satzung</a></li>
+                    <li><a href="./bewerben.html">Mitglied werden</a></li>
+                    <li><a href="./kontakt.html">Kontakt</a></li>
+                    <li><a href="./impressum.html">Impressum</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="headline">
+            <h1>Kontakt zur Monarchistischen Volkspartei (MVP)</h1>
+            <h2>Wir freuen uns über deine Nachricht!</h2>
+        </section>
+
+        <p>Du hast Fragen, Anregungen oder Interesse an einer Mitgliedschaft? Dann erreichst du uns ganz einfach per E-Mail:</p>
+
+        <p><strong>📧 E-Mail:</strong> <a href="mailto:monarchistische.volkspartei@gmail.com">monarchistische.volkspartei@gmail.com</a></p>
+
+        <p>Wir beantworten deine Nachrichten so schnell wie möglich und freuen uns, von dir zu hören.</p>
+    </main>
+
+     <footer id="kontakt">
+        <p>© 2025 Monarchistische Volkspartei (MVP) | Kontakt: monarchistische.volkspartei@gmail.com</p>
+    </footer>
+</body>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const headerLinks = document.getElementById('headerlinks');
+
+        menuToggle.addEventListener('click', () => {
+            headerLinks.classList.toggle('active');
+        });
+    </script>
+
+
+</html>
