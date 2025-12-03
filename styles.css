@@ -381,10 +381,86 @@ footer {
   opacity: 0.8;
 }
 
-/* Mobile Ansicht */
-@media (max-width: 600px) {
-  .footer-links {
-    flex-direction: column;
-    gap: 8px;
+/* -------- Header responsive improvements (paste ans Ende von styles.css) -------- */
+
+/* Kleinere Header-Abstände mobil, kompakteres Logo und besseres Dropdown */
+@media (max-width: 768px) {
+  header {
+    padding: 0; /* reduziert Gesamtabstand */
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.25);
   }
+
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px; /* kleinerer Innenabstand */
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .logoimg {
+    width: 92px; /* kompakteres Logo */
+    border-radius: 12px;
+  }
+
+  /* Burger-Icon etwas feiner */
+  .menu-toggle {
+    display: flex;
+    gap: 4px;
+    padding: 6px;
+    border-radius: 8px;
+  }
+
+  .menu-toggle span {
+    width: 20px;
+    height: 2px;
+    background: #000;
+  }
+
+  /* Dropdown Menü: rechts, mit smoother transition */
+  .headerlinks {
+    position: absolute;
+    top: 56px; /* mehr kompakt */
+    right: 12px;
+    background: #C0392B;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    width: 200px;
+    display: none;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+    border-radius: 8px;
+    transform-origin: top right;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+
+  .headerlinks.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .headerlinks li a {
+    color: white;
+    padding: 8px 10px;
+    display: block;
+    font-weight: 600;
+  }
+
+  /* Falls du Icons im Header hast: kleiner */
+  .social-icon { width: 34px; height: 34px; margin-left: 6px; }
+
+  /* verhindert, dass Header zu groß wird */
+  header, .header-container { height: auto; min-height: 56px; }
+}
+
+/* Sehr kleine Bildschirme (extra kompakt) */
+@media (max-width: 480px) {
+  .logoimg { width: 80px; }
+  .headerlinks { right: 8px; top: 52px; width: 170px; padding: 10px; gap: 10px; }
+  .headerlinks li a { font-size: 0.95rem; padding: 8px 8px; }
+  .menu-toggle span { width: 18px; height: 1.8px; }
 }

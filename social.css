@@ -1,0 +1,160 @@
+/* social.css — nur für social.html */
+:root {
+    --mvp-red: #C0392B;
+    --muted: #666;
+    --card-bg: #fff;
+}
+
+/* Basis layout */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 16px;
+    text-align: center;
+}
+
+/* Headline */
+.headline {
+    background-color: rgb(223, 219, 219);
+    border-radius: 20px;
+    padding: 28px 16px;
+    margin-bottom: 26px;
+}
+
+.headline h1 {
+    font-size: 1.9rem;
+    margin: 0 0 6px;
+}
+
+.headline h2 {
+    font-size: 1.05rem;
+    color: #444;
+    margin: 0;
+}
+
+/* Grid für zwei Karten nebeneinander */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* Einzelne Karte */
+.card {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.card-icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #fff, #f6f6f6);
+    color: var(--mvp-red);
+}
+
+.card-body h2 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+}
+
+.card-body p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 10px 14px;
+    background: var(--mvp-red);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* CTA-Box */
+.cta-box {
+    margin-top: 18px;
+    padding: 14px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Footer spacing (falls überschreiben nötig) */
+.site-footer,
+footer {
+    margin-top: 28px;
+}
+
+.social-logo{
+    width: 50px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+}
+
+/* --- Responsive Hinweise (du wolltest die Anpassungen kontrollieren) --- */
+/* Einspaltig für Tablets & Handy */
+@media (max-width: 768px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .card {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .card-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .card-body h2 {
+        font-size: 1rem;
+    }
+
+    .card-body p {
+        font-size: 0.92rem;
+    }
+
+    .btn {
+        padding: 9px 12px;
+        font-size: 0.95rem;
+        display: inline-block;
+    }
+}
+
+/* Sehr kleine Bildschirme: Buttons volle Breite optional */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .lead {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        display: block;
+        text-align: center;
+    }
+}

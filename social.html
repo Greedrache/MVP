@@ -4,17 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVP</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Social — MVP</title>
+    <link rel="stylesheet" href="styles.css"> <!-- dein Haupt-CSS -->
+    <link rel="stylesheet" href="social.css"> <!-- Seite-spezifisch -->
     <link rel="icon" type="image/png" href="img/logo.png">
 </head>
 
-<body>
-      <header>
+<body class="min-height">
+    <!-- Header (gleich wie in index.html, nur Menüpunkt Social hinzugefügt) -->
+    <header>
         <div class="header-container">
             <a href="./index.html"><img class="logoimg" src="img/logo.png" alt="Logo"></a>
 
-            <div class="menu-toggle" id="menu-toggle">
+            <!-- Burger Icon -->
+            <div class="menu-toggle" id="menu-toggle" aria-label="Menü umschalten" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -25,7 +28,7 @@
                     <li><a href="./ganzesprogramm.html">Wahlprogramm</a></li>
                     <li><a href="./bewerben.html">Mitglied werden</a></li>
                     <li><a href="./kontakt.html">Kontakt</a></li>
-                    <li><a href="./social.html" aria-current="page">Social</a></li> 
+                    <li><a href="./social.html" aria-current="page">Social</a></li> <!-- neu -->
                 </ul>
             </nav>
         </div>
@@ -33,33 +36,49 @@
 
     <main>
         <section class="headline">
-            <h1>Monarchistische Volkspartei (MVP)</h1>
-            <h2>Leitspruch: „Tradition. Demokratie. Volkswille.“</h2>
+            <h1>Unsere Social-Media-Kanäle</h1>
+            <h2>Folge uns auf Instagram oder tritt unserem Discord bei</h2>
         </section>
 
-        
-        <p>In Deutschland soll die Demokratie lebendig sein: Bürgerinnen und Bürger bestimmen mit, das Parlament bleibt
-            stark und unabhängig, und wichtige Entscheidungen werden direkt vom Volk getroffen – über Abstimmungen und
-            digitale Bürgerforen.</p>
+        <section class="social-grid" aria-label="Social Media Links">
+            <article class="card" id="instagram-card">
+                <div class="card-icon" aria-hidden="true">
+                    <!-- lokales Bild nutzen -->
+                    <img src="img/Insta.png" alt="Instagram Logo" class="social-logo">
+                </div>
 
-        <p>Der Kaiser oder die Kaiserin, direkt vom Volk gewählt, dient als repräsentatives Staatsoberhaupt. Er oder sie vertritt Deutschland nach innen und außen, nimmt zeremonielle Aufgaben wahr und vermittelt die Ergebnisse von Volksentscheiden – ohne Regierungsbefugnisse.</p>
-        
-        <p> Die politische Führung bleibt beim Bundeskanzler oder der Bundeskanzlerin, der vom Parlament gewählt wird und die Regierung leitet.</p>
+                <div class="card-body">
+                    <h2>Instagram</h2>
+                    <p>Visuelle Updates, Stories und Veranstaltungshinweise.</p>
+                    <a class="btn" href="https://www.instagram.com/monarchistische_volkspartei/" target="_blank" rel="noopener noreferrer" aria-label="MVP auf Instagram öffnen">Zum Instagram</a>
+                </div>
+            </article>
 
-        <p>Gleichberechtigung, Transparenz und Mitbestimmung stehen im Mittelpunkt. Traditionen werden bewahrt, ohne die Freiheit oder Rechte der Menschen einzuschränken. Unsere Nationalsymbole bleiben schwarz-rot-gold; optional kann eine stilisierte Krone den historischen Charakter betonen.</p>
+            <article class="card" id="discord-card">
+                <div class="card-icon" aria-hidden="true">
+                    <!-- lokales Bild nutzen -->
+                    <img src="img/Discord.png" alt="Discord Logo" class="social-logo">
+                </div>
+
+                <div class="card-body">
+                    <h2>Discord</h2>
+                    <p>Tritt unserem Server bei für Diskussionen, Organisation und Austausch.</p>
+                    <a class="btn" href="https://discord.gg/" target="_blank" rel="noopener noreferrer" aria-label="MVP Discord Server öffnen">Zum Discord</a>
+                </div>
+            </article>
+        </section>
 
         <div class="cta-box">
-            <p>📖 Das gesamte Wahlprogramm findest du <a href="./ganzesprogramm.html">hier</a>.</p>
-            <p>✨ Du hast Interesse an einer Mitgliedschaft? <a href="./bewerben.html">Klicke hier</a> und werde Teil der
-                MVP!</p>
+            <p>📌 Tipp: Poste dort offizielle Ankündigungen und ein kurzes Begrüßungsposting — das schafft Vertrauen.</p>
         </div>
     </main>
 
-    <!-- Popup -->
-    <div id="successPopup" class="popup">
+    <!-- Popup (selbe wie index) -->
+    <div id="successPopup" class="popup" role="status" aria-live="polite">
         <p>✅ Mail erfolgreich versendet!</p>
     </div>
 
+    <!-- Footer (gleich wie in index.html) -->
     <footer id="kontakt">
         <div class="footer-content">
             <div class="footer-logo">
@@ -84,12 +103,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- Gleiche JS-Logik wie index (Burger + Popup) -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const headerLinks = document.getElementById('headerlinks');
 
         menuToggle.addEventListener('click', () => {
             headerLinks.classList.toggle('active');
+        });
+
+        menuToggle.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') menuToggle.click();
         });
 
         // Popup-Logik
@@ -102,8 +127,6 @@
                 setTimeout(() => popup.remove(), 500);
             }, 3000); // nach 3s ausblenden
         }
-
-
     </script>
 </body>
 
