@@ -4,7 +4,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
+  left: 0;
 }
+
 
 .favicon {
   width: 48px;
@@ -49,11 +52,17 @@ header {
   color: white;
 }
 
-/* Body & Main */
 body {
   margin: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body {
+  align-items: stretch;
 }
 
 main {
