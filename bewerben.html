@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="header-container">
-            <a href="./"><img class="logoimg" src="img/logo.png" alt="Logo"></a>
+          <a href="./"><img class="logoimg" src="img/logo.png" alt="Logo" loading="eager"></a>
 
             <div class="menu-toggle" id="menu-toggle">
                 <span></span>
@@ -32,13 +32,18 @@
     </header>
 
   <main>
-    <h1>Mitglied werden bei der MVP</h1>
-    <p class="intro">
-      Willkommen! Wir freuen uns, dass du Teil unserer Bewegung werden möchtest.
-      Als Mitglied der MVP unterstützt du unsere Vision von Tradition, Demokratie und Volkswille aktiv mit.
-    </p>
+    <section class="hero">
+      <div class="hero-inner fade-up">
+        <h1>Mitglied werden bei der MVP</h1>
+        <h2>Gestalte Politik mit — regional und digital.</h2>
+        <p class="hero-sub">Werde Teil unserer Gemeinschaft und unterstütze Initiativen in deiner Region.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="#bewerbungsformular">Jetzt bewerben</a>
+        </div>
+      </div>
+    </section>
 
-    <section class="bewerbungsformular">
+    <section id="bewerbungsformular" class="bewerbungsformular fade-up">
       <h2>Bewerbungsformular</h2>
       <form action="https://formspree.io/f/xovkqjry" method="POST">
         <label for="name">Name</label>
@@ -53,7 +58,7 @@
         <label for="warum">Warum möchtest du Mitglied werden?</label>
         <textarea id="warum" name="warum" rows="5" required></textarea>
 
-        <button type="submit">Bewerbung absenden</button>
+        <button type="submit" class="btn-primary">Bewerbung absenden</button>
       </form>
     </section>
   </main>
@@ -61,7 +66,7 @@
   <footer id="kontakt">
     <div class="footer-content">
       <div class="footer-logo">
-        <img src="img/logo.png" alt="MVP Logo">
+        <img src="img/logo.png" alt="MVP Logo" loading="lazy">
         <p>Monarchistische Volkspartei (MVP)</p>
       </div>
 
@@ -82,6 +87,9 @@
       </div>
     </div>
   </footer>
+  <!-- Sticky CTA -->
+  <a class="sticky-cta" href="./bewerben.html" aria-label="Mitglied werden">Mitglied werden</a>
+
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const headerLinks = document.getElementById('headerlinks');

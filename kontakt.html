@@ -10,9 +10,9 @@
 </head>
 
 <body class="min-height">
-     <header>
-        <div class="header-container">
-            <a href="./"><img class="logoimg" src="img/logo.png" alt="Logo"></a>
+    <header>
+      <div class="header-container">
+        <a href="./"><img class="logoimg" src="img/logo.png" alt="Logo" loading="eager"></a>
 
             <div class="menu-toggle" id="menu-toggle">
                 <span></span>
@@ -31,10 +31,12 @@
         </div>
     </header>
 
-  <main>
-    <section class="headline">
-      <h1>Kontakt zur Monarchistischen Volkspartei (MVP)</h1>
-      <h2>Wir freuen uns über deine Nachricht!</h2>
+    <main>
+    <section class="hero">
+      <div class="hero-inner fade-up">
+        <h1>Kontakt zur Monarchistischen Volkspartei (MVP)</h1>
+        <h2>Wir freuen uns über deine Nachricht!</h2>
+      </div>
     </section>
 
     <section class="cta-box">
@@ -55,7 +57,7 @@
   <footer id="kontakt">
     <div class="footer-content">
       <div class="footer-logo">
-        <img src="img/logo.png" alt="MVP Logo">
+        <img src="img/logo.png" alt="MVP Logo" loading="lazy">
         <p>Monarchistische Volkspartei (MVP)</p>
       </div>
 
@@ -76,6 +78,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Sticky CTA -->
+  <a class="sticky-cta" href="./bewerben.html" aria-label="Mitglied werden">Mitglied werden</a>
 
   <script>
     const menuToggle = document.getElementById('menu-toggle');

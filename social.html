@@ -13,7 +13,7 @@
 <body class="min-height">
     <header>
         <div class="header-container">
-            <a href="./"><img class="logoimg" src="img/logo.png" alt="Logo"></a>
+            <a href="./"><img class="logoimg" src="img/logo.png" alt="Logo" loading="eager"></a>
 
             <div class="menu-toggle" id="menu-toggle" aria-label="Menü umschalten" role="button" tabindex="0">
                 <span></span>
@@ -33,35 +33,44 @@
     </header>
 
     <main>
-        <section class="headline">
-            <h1>Unsere Social-Media-Kanäle</h1>
-            <h2>Folge uns auf Instagram oder tritt unserem Discord bei</h2>
+        <section class="hero">
+            <div class="hero-inner fade-up">
+                <h1>Folge uns &amp; Engagiere dich</h1>
+                <h2>Updates, Events und Austausch — direkt in deinen Kanälen.</h2>
+                <p class="hero-sub">Folge uns, tritt unserem Discord bei oder melde dich für Event‑Updates an.</p>
+                <div class="hero-ctas">
+                    <a class="btn-primary" href="https://www.instagram.com/monarchistische_volkspartei/" target="_blank">Instagram</a>
+                    <a class="btn-secondary" href="https://discord.gg/FMJgrNpD" target="_blank">Discord</a>
+                </div>
+            </div>
         </section>
 
         <section class="social-grid" aria-label="Social Media Links">
-            <article class="card" id="instagram-card">
-                <div class="card-icon" aria-hidden="true">
-                    <!-- lokales Bild nutzen -->
-                    <img src="img/Insta.png" alt="Instagram Logo" class="social-logo">
+            <article class="card social-card" id="instagram-card">
+                <div class="card-media">
+                    <img src="img/Insta.png" alt="Instagram" class="social-thumb" loading="lazy">
                 </div>
-
                 <div class="card-body">
                     <h2>Instagram</h2>
                     <p>Visuelle Updates, Stories und Veranstaltungshinweise.</p>
-                    <a class="btn" href="https://www.instagram.com/monarchistische_volkspartei/" target="_blank" rel="noopener noreferrer" aria-label="MVP auf Instagram öffnen">Zum Instagram</a>
+                    <div class="card-actions">
+                        <a class="btn" href="https://www.instagram.com/monarchistische_volkspartei/" target="_blank" rel="noopener noreferrer">Zum Instagram</a>
+                        
+                    </div>
                 </div>
             </article>
 
-            <article class="card" id="discord-card">
-                <div class="card-icon" aria-hidden="true">
-                    <!-- lokales Bild nutzen -->
-                    <img src="img/Discord.png" alt="Discord Logo" class="social-logo">
+            <article class="card social-card" id="discord-card">
+                <div class="card-media">
+                    <img src="img/Discord.png" alt="Discord" class="social-thumb" loading="lazy">
                 </div>
-
                 <div class="card-body">
                     <h2>Discord</h2>
                     <p>Tritt unserem Server bei für Diskussionen, Organisation und Austausch.</p>
-                    <a class="btn" href="https://discord.gg/" target="_blank" rel="noopener noreferrer" aria-label="MVP Discord Server öffnen">Zum Discord</a>
+                    <div class="card-actions">
+                        <a class="btn" href="https://discord.gg/FMJgrNpD" target="_blank" rel="noopener noreferrer">Zum Discord</a>
+                        
+                    </div>
                 </div>
             </article>
         </section>
@@ -69,16 +78,15 @@
        
     </main>
 
-    <!-- Popup (selbe wie index) -->
+
     <div id="successPopup" class="popup" role="status" aria-live="polite">
         <p>✅ Mail erfolgreich versendet!</p>
     </div>
 
-    <!-- Footer (gleich wie in index.html) -->
     <footer id="kontakt">
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="img/logo.png" alt="MVP Logo">
+                <img src="img/logo.png" alt="MVP Logo" loading="lazy">
                 <p>Monarchistische Volkspartei (MVP)</p>
             </div>
 
@@ -100,7 +108,8 @@
         </div>
     </footer>
 
-    <!-- Gleiche JS-Logik wie index (Burger + Popup) -->
+    <a class="sticky-cta" href="./bewerben.html" aria-label="Mitglied werden">Mitglied werden</a>
+
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const headerLinks = document.getElementById('headerlinks');
@@ -113,7 +122,6 @@
             if (e.key === 'Enter' || e.key === ' ') menuToggle.click();
         });
 
-        // Popup-Logik
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get("success") === "1") {
             const popup = document.getElementById("successPopup");
@@ -121,7 +129,7 @@
             setTimeout(() => {
                 popup.style.opacity = "0";
                 setTimeout(() => popup.remove(), 500);
-            }, 3000); // nach 3s ausblenden
+            }, 3000); 
         }
     </script>
 </body>

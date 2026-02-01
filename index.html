@@ -32,9 +32,42 @@
     </header>
 
     <main>
-        <section class="headline">
-            <h1>Monarchistische Volkspartei (MVP)</h1>
-            <h2>Leitspruch: „Tradition. Demokratie. Volkswille.“</h2>
+        <section class="hero">
+            <div class="hero-inner fade-up">
+                <h1>Monarchistische Volkspartei (MVP)</h1>
+                <h2>Leitspruch: „Tradition. Demokratie. Volkswille.“</h2>
+                <p class="hero-sub">Für eine starke Mitbestimmung, transparente Politik und gelebte Tradition.</p>
+                <div class="hero-ctas">
+                    <a class="btn-primary" href="./bewerben.html">Mitglied werden</a>
+                    <a class="btn-secondary" href="./ganzesprogramm.html">Wahlprogramm ansehen</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick facts: highlight simple metrics -->
+        <div class="quick-facts fade-up" aria-hidden="false">
+            <div class="fact"><div class="num">50+</div><div class="label">Unterstützer</div></div>
+            <div class="fact"><div class="num">1</div><div class="label">Regionale Gruppen</div></div>
+            <div class="fact"><div class="num">3</div><div class="label">Aktive Projekte</div></div>
+        </div>
+
+        <!-- Policy highlights: short, scannable -->
+        <section class="policies fade-up" aria-label="Kernaussagen">
+            <article class="policy">
+                <h3>Direkte Mitbestimmung</h3>
+                <p>Wir setzen auf regelmäßige Volksentscheide und digitale Bürgerräte.</p>
+                <a class="more" href="./ganzesprogramm.html#mitbestimmung">Mehr</a>
+            </article>
+            <article class="policy">
+                <h3>Transparenz & Kontrolle</h3>
+                <p>Offene Protokolle, klare Rechenschaftspflichten und unabhängige Kontrolle.</p>
+                <a class="more" href="./impressum.html">Mehr</a>
+            </article>
+            <article class="policy">
+                <h3>Stärkung lokaler Strukturen</h3>
+                <p>Wir fördern lokale Initiativen und direkte Beteiligung vor Ort.</p>
+                <a class="more" href="./nachweis-demokratie.html">Mehr</a>
+            </article>
         </section>
 
         
@@ -84,6 +117,8 @@
             </div>
         </div>
     </footer>
+    <!-- Sticky CTA -->
+    <a class="sticky-cta" href="./bewerben.html" aria-label="Mitglied werden">Mitglied werden</a>
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const headerLinks = document.getElementById('headerlinks');
