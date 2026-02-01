@@ -7,6 +7,14 @@
     <title>Impressum – MVP</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
+        <style>
+            /* Page-scoped: allow mailto and long ODR link to wrap only on this page */
+            a[href^="mailto:"], a[href*="ec.europa.eu/consumers/odr"] {
+                overflow-wrap: anywhere;
+                word-break: break-word;
+                white-space: normal;
+            }
+        </style>
 </head>
 
 <body>

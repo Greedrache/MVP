@@ -250,7 +250,6 @@ footer {
   background-color: #C0392B;
   color: white;
   word-wrap: break-word;
-  /* Lange WÃ¶rter umbrechen */
   overflow-wrap: break-word;
   /* Modernere Variante */
   white-space: normal;
