@@ -676,3 +676,15 @@ footer {
     display: none;
   }
 }
+
+/* Contact page: only target the main contact email to prevent overflow */
+.contact-email {
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  -ms-word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
