@@ -10,28 +10,28 @@
 </head>
 
 <body class="min-height">
-    <header>
-      <div class="header-container">
-        <a href="./"><img class="logoimg" src="img/logo.png" alt="Logo" loading="eager"></a>
+  <header>
+    <div class="header-container">
+      <a href="./"><img class="logoimg" src="img/logo.png" alt="Logo" loading="eager"></a>
 
-            <div class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-            <nav>
-                <ul class="headerlinks" id="headerlinks">
-                    <li><a href="./ganzesprogramm.html">Wahlprogramm</a></li>
-                    <li><a href="./bewerben.html">Mitglied werden</a></li>
-                    <li><a href="./kontakt.html">Kontakt</a></li>
-                    <li><a href="./social.html" aria-current="page">Social</a></li> 
-                </ul>
-            </nav>
-        </div>
-    </header>
+      <nav>
+        <ul class="headerlinks" id="headerlinks">
+          <li><a href="./ganzesprogramm.html">Wahlprogramm</a></li>
+          <li><a href="./bewerben.html">Mitglied werden</a></li>
+          <li><a href="./kontakt.html">Kontakt</a></li>
+          <li><a href="./social.html" aria-current="page">Social</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
+  <main>
     <section class="hero">
       <div class="hero-inner fade-up">
         <h1>Kontakt zur Monarchistischen Volkspartei (MVP)</h1>
@@ -40,7 +40,7 @@
     </section>
 
     <section class="cta-box">
-      <p>Du hast Fragen, Anregungen oder Interesse an einer Mitgliedschaft?  
+      <p>Du hast Fragen, Anregungen oder Interesse an einer Mitgliedschaft?
         Dann erreichst du uns ganz einfach per E-Mail:</p>
 
       <p>
@@ -82,14 +82,7 @@
   <!-- Sticky CTA -->
   <a class="sticky-cta" href="./bewerben.html" aria-label="Mitglied werden">Mitglied werden</a>
 
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const headerLinks = document.getElementById('headerlinks');
-
-    menuToggle.addEventListener('click', () => {
-      headerLinks.classList.toggle('active');
-    });
-  </script>
+  <script src="Javascript/headerlinks.js"></script>
 </body>
 
 </html>

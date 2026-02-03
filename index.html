@@ -10,7 +10,7 @@
 </head>
 
 <body>
-      <header>
+    <header>
         <div class="header-container">
             <a href="./"><img class="logoimg" src="img/logo.png" alt="Logo"></a>
 
@@ -25,7 +25,7 @@
                     <li><a href="./ganzesprogramm.html">Wahlprogramm</a></li>
                     <li><a href="./bewerben.html">Mitglied werden</a></li>
                     <li><a href="./kontakt.html">Kontakt</a></li>
-                    <li><a href="./social.html" aria-current="page">Social</a></li> 
+                    <li><a href="./social.html" aria-current="page">Social</a></li>
                 </ul>
             </nav>
         </div>
@@ -46,9 +46,18 @@
 
         <!-- Quick facts: highlight simple metrics -->
         <div class="quick-facts fade-up" aria-hidden="false">
-            <div class="fact"><div class="num">50+</div><div class="label">Unterstützer</div></div>
-            <div class="fact"><div class="num">1</div><div class="label">Regionale Gruppen</div></div>
-            <div class="fact"><div class="num">3</div><div class="label">Aktive Projekte</div></div>
+            <div class="fact">
+                <div class="num">50+</div>
+                <div class="label">Unterstützer</div>
+            </div>
+            <div class="fact">
+                <div class="num">1</div>
+                <div class="label">Regionale Gruppen</div>
+            </div>
+            <div class="fact">
+                <div class="num">3</div>
+                <div class="label">Aktive Projekte</div>
+            </div>
         </div>
 
         <!-- Policy highlights: short, scannable -->
@@ -70,16 +79,21 @@
             </article>
         </section>
 
-        
+
         <p>In Deutschland soll die Demokratie lebendig sein: Bürgerinnen und Bürger bestimmen mit, das Parlament bleibt
             stark und unabhängig, und wichtige Entscheidungen werden direkt vom Volk getroffen – über Abstimmungen und
             digitale Bürgerforen.</p>
 
-        <p>Der Kaiser oder die Kaiserin, direkt vom Volk gewählt, dient als repräsentatives Staatsoberhaupt. Er oder sie vertritt Deutschland nach innen und außen, nimmt zeremonielle Aufgaben wahr und vermittelt die Ergebnisse von Volksentscheiden – ohne Regierungsbefugnisse.</p>
-        
-        <p> Die politische Führung bleibt beim Bundeskanzler oder der Bundeskanzlerin, der vom Parlament gewählt wird und die Regierung leitet.</p>
+        <p>Der Kaiser oder die Kaiserin, direkt vom Volk gewählt, dient als repräsentatives Staatsoberhaupt. Er oder sie
+            vertritt Deutschland nach innen und außen, nimmt zeremonielle Aufgaben wahr und vermittelt die Ergebnisse
+            von Volksentscheiden – ohne Regierungsbefugnisse.</p>
 
-        <p>Gleichberechtigung, Transparenz und Mitbestimmung stehen im Mittelpunkt. Traditionen werden bewahrt, ohne die Freiheit oder Rechte der Menschen einzuschränken. Unsere Nationalsymbole bleiben schwarz-rot-gold; optional kann eine stilisierte Krone den historischen Charakter betonen.</p>
+        <p> Die politische Führung bleibt beim Bundeskanzler oder der Bundeskanzlerin, der vom Parlament gewählt wird
+            und die Regierung leitet.</p>
+
+        <p>Gleichberechtigung, Transparenz und Mitbestimmung stehen im Mittelpunkt. Traditionen werden bewahrt, ohne die
+            Freiheit oder Rechte der Menschen einzuschränken. Unsere Nationalsymbole bleiben schwarz-rot-gold; optional
+            kann eine stilisierte Krone den historischen Charakter betonen.</p>
 
         <div class="cta-box">
             <p>📖 Das gesamte Wahlprogramm findest du <a href="./ganzesprogramm.html">hier</a>.</p>
@@ -120,13 +134,6 @@
     <!-- Sticky CTA -->
     <a class="sticky-cta" href="./bewerben.html" aria-label="Mitglied werden">Mitglied werden</a>
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const headerLinks = document.getElementById('headerlinks');
-
-        menuToggle.addEventListener('click', () => {
-            headerLinks.classList.toggle('active');
-        });
-
         // Popup-Logik
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get("success") === "1") {
@@ -137,9 +144,9 @@
                 setTimeout(() => popup.remove(), 500);
             }, 3000); // nach 3s ausblenden
         }
-
-
     </script>
+
+    <script src="Javascript/headerlinks.js"></script>
 </body>
 
 </html>
