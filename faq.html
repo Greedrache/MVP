@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt – MVP</title>
+  <title>Häufige Fragen – MVP</title>
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="components.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="faq.css">
   <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 
-<body class="min-height">
+<body>
   <header>
     <div class="header-container">
       <a href="./"><img class="logoimg" src="img/logo.png" alt="Logo" loading="eager"></a>
@@ -36,25 +37,36 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-inner fade-up">
-        <h1>Kontakt zur Monarchistischen Volkspartei (MVP)</h1>
-        <h2>Wir freuen uns über deine Nachricht!</h2>
+    <section class="headline">
+      <h1>Häufige Fragen</h1>
+    </section>
+
+    <section class="faq-section">
+      <div class="faq-item">
+        <div class="faq-question">Warum brauchen wir einen Kaiser?</div>
+        <div class="faq-answer">Weil ein gewähltes, neutrales Staatsoberhaupt Stabilität gibt, während die Politik sich oft streitet. Er ist das Symbol für unsere Einheit.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Wer hat das letzte Wort?</div>
+        <div class="faq-answer">Immer das Volk. Der Kaiser repräsentiert nur, aber bei Gesetzen und wichtigen Entscheidungen zählt allein die Volksabstimmung.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Ist die MVP eine Partei für alle?</div>
+        <div class="faq-answer">Ja. Wir stehen für absolute Gleichberechtigung. Bei uns zählen Fähigkeiten und demokratisches Engagement, kein Geschlecht oder Hintergrund.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Wie funktioniert das Bürgerforum?</div>
+        <div class="faq-answer">Jeder Bürger kann dort Ideen einreichen. Wenn eine Idee genug Unterstützung bekommt, muss das Parlament darüber beraten oder das Volk abstimmen.</div>
       </div>
     </section>
 
-    <section class="cta-box">
-      <p>Du hast Fragen, Anregungen oder Interesse an einer Mitgliedschaft?
-        Dann erreichst du uns ganz einfach per E-Mail:</p>
-
-      <p>
-        <strong>📧 E-Mail:</strong>
-        <a class="contact-email" href="mailto:monarchistische.volkspartei@gmail.com">
-          info@mvp-politik.de
-        </a>
-      </p>
-
-      <p>Wir beantworten deine Nachricht so schnell wie möglich und freuen uns, von dir zu hören.</p>
+    <section class="faq-cta">
+      <h2>Deine Frage ist nicht dabei?</h2>
+      <p>Kein Problem! Melde dich gerne bei uns – wir beantworten alle deine Fragen persönlich.</p>
+      <a class="btn" href="./kontakt.html">Kontakt aufnehmen</a>
     </section>
   </main>
 
@@ -69,7 +81,7 @@
         <a href="./satzung.html">Satzung</a>
         <a href="./nachweis-demokratie.html">Struktur</a>
         <a href="./impressum.html">Impressum</a>
-        <a href="./kontakt.html" class="active">Kontakt</a>
+        <a href="./kontakt.html">Kontakt</a>
       </nav>
 
       <div class="footer-bottom">
@@ -82,9 +94,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Sticky CTA -->
-  <a class="sticky-cta" href="./bewerben.html" aria-label="Mitglied werden">Mitglied werden</a>
 
   <script src="Javascript/headerlinks.js"></script>
 </body>
