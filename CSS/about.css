@@ -1,0 +1,64 @@
+.about-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.about-card {
+  background: #fff;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.about-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #C0392B;
+  margin-bottom: 1rem;
+  font-family: 'Merriweather', Georgia, serif;
+}
+
+.about-card p {
+  color: #444;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-card p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-cta {
+  background: linear-gradient(135deg, #C0392B 0%, #922B21 100%);
+  text-align: center;
+}
+
+.about-cta h2 {
+  color: #fff;
+}
+
+.about-cta p {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.about-cta .btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: linear-gradient(90deg, #f8d46a, #e0b84c);
+  color: #111;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-cta .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}

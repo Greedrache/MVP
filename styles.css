@@ -188,7 +188,7 @@ footer {
   white-space: normal;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 908px) {
   .header-container {
     flex-direction: row;
     align-items: center;

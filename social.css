@@ -11,6 +11,7 @@ main {
     margin: 30px auto;
     padding: 0 16px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 /* Headline */
@@ -19,6 +20,7 @@ main {
     border-radius: 20px;
     padding: 28px 16px;
     margin-bottom: 26px;
+    box-sizing: border-box;
 }
 
 .headline h1 {
@@ -48,6 +50,7 @@ main {
     background: var(--card-bg);
     padding: 18px;
     border-radius: 12px;
+    box-sizing: border-box;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     text-align: left;
 }
@@ -111,50 +114,178 @@ footer {
 }
 
 /* --- Responsive Hinweise (du wolltest die Anpassungen kontrollieren) --- */
-/* Einspaltig für Tablets & Handy */
+/* Tablets */
 @media (max-width: 768px) {
+    main {
+        max-width: 100%;
+        padding: 0 20px;
+        margin: 20px auto;
+    }
+
+    .hero {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     .social-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .social-card.card {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 20px 16px;
         gap: 14px;
+        align-items: center !important;
+        max-width: 100%;
     }
 
-    .card {
-        padding: 12px;
-        gap: 10px;
+    .social-card .card-media {
+        width: 80px !important;
+        height: 80px !important;
+        flex: 0 0 80px !important;
+        margin: 0 auto;
     }
 
-    .card-icon {
-        width: 56px;
-        height: 56px;
+    .social-card .card-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
-    .card-body h2 {
-        font-size: 1rem;
+    .social-card .card-body {
+        text-align: center;
+        padding: 0;
     }
 
-    .card-body p {
-        font-size: 0.92rem;
+    .social-card .card-body h2 {
+        font-size: 1.15rem;
+    }
+
+    .social-card .card-body p {
+        font-size: 0.95rem;
+    }
+
+    .social-card .card-actions {
+        justify-content: center;
     }
 
     .btn {
-        padding: 9px 12px;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .headline {
+        padding: 20px 14px;
+    }
+
+    .headline h1 {
+        font-size: 1.5rem;
+    }
+
+    .headline h2 {
         font-size: 0.95rem;
-        display: inline-block;
+    }
+
+    .hero {
+        padding: 50px 16px;
+        border-radius: 14px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero h2 {
+        font-size: 1rem;
+    }
+
+    .hero-sub {
+        font-size: 0.9rem;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-ctas a {
+        width: 100%;
+        text-align: center;
     }
 }
 
-/* Sehr kleine Bildschirme: Buttons volle Breite optional */
+/* Sehr kleine Bildschirme (Handys) */
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.4rem;
+    main {
+        padding: 0 16px;
+        margin: 16px auto;
     }
 
-    .lead {
+    .social-grid {
+        max-width: 320px;
+    }
+
+    .social-card.card {
+        padding: 16px 12px;
+    }
+
+    .social-card .card-media {
+        width: 70px !important;
+        height: 70px !important;
+        flex: 0 0 70px !important;
+    }
+
+    .social-card .card-body h2 {
+        font-size: 1rem;
+    }
+
+    .social-card .card-body p {
         font-size: 0.9rem;
+        margin-bottom: 10px;
     }
 
     .btn {
         display: block;
+        width: 100%;
         text-align: center;
+        padding: 14px 16px;
+    }
+
+    .headline {
+        padding: 16px 12px;
+        border-radius: 14px;
+    }
+
+    .headline h1 {
+        font-size: 1.25rem;
+    }
+
+    .headline h2 {
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        padding: 40px 14px;
+        border-radius: 12px;
+    }
+
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero h2 {
+        font-size: 0.95rem;
+    }
+
+    .hero-sub {
+        font-size: 0.85rem;
+    }
+
+    .cta-box {
+        padding: 12px;
     }
 }
