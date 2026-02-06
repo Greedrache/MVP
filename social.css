@@ -115,7 +115,7 @@ footer {
 
 /* --- Responsive Hinweise (du wolltest die Anpassungen kontrollieren) --- */
 /* Tablets */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     main {
         max-width: 100%;
         padding: 0 20px;
@@ -213,7 +213,6 @@ footer {
     }
 
     .hero-ctas a {
-        width: 100%;
         text-align: center;
     }
 }
