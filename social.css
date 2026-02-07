@@ -1,11 +1,9 @@
-/* social.css — nur für social.html */
 :root {
     --mvp-red: #C0392B;
     --muted: #666;
     --card-bg: #fff;
 }
 
-/* Basis layout */
 main {
     max-width: 900px;
     margin: 30px auto;
@@ -14,7 +12,6 @@ main {
     box-sizing: border-box;
 }
 
-/* Headline */
 .headline {
     background-color: rgb(223, 219, 219);
     border-radius: 20px;
@@ -34,7 +31,6 @@ main {
     margin: 0;
 }
 
-/* Grid für zwei Karten nebeneinander */
 .social-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -42,7 +38,6 @@ main {
     align-items: stretch;
 }
 
-/* Einzelne Karte */
 .card {
     display: flex;
     gap: 14px;
@@ -77,7 +72,6 @@ main {
     font-size: 0.95rem;
 }
 
-/* Button */
 .btn {
     display: inline-block;
     padding: 10px 14px;
@@ -92,7 +86,6 @@ main {
     transform: translateY(-2px);
 }
 
-/* CTA-Box */
 .cta-box {
     margin-top: 18px;
     padding: 14px;
@@ -101,7 +94,6 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
-/* Footer spacing (falls überschreiben nötig) */
 .site-footer,
 footer {
     margin-top: 28px;
@@ -113,8 +105,6 @@ footer {
     margin-bottom: 4px;
 }
 
-/* --- Responsive Hinweise (du wolltest die Anpassungen kontrollieren) --- */
-/* Tablets */
 @media (max-width: 900px) {
     main {
         max-width: 100%;
@@ -217,7 +207,6 @@ footer {
     }
 }
 
-/* Sehr kleine Bildschirme (Handys) */
 @media (max-width: 480px) {
     main {
         padding: 0 16px;

@@ -84,7 +84,6 @@ header {
   color: white;
 }
 
-/* --- Mobile Menu Toggle --- */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -99,7 +98,6 @@ header {
   border-radius: 3px;
 }
 
-/* --- Footer --- */
 footer {
   background-color: #C0392B;
   color: #fff;
