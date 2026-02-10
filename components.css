@@ -55,6 +55,26 @@
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
 }
 
+.pdf-download-btn {
+  background: linear-gradient(135deg, #f8d46a, #e0b84c);
+  color: #111;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  display: inline-block;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.pdf-download-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(248, 212, 106, 0.4);
+  background: linear-gradient(135deg, #ffe082, #f8d46a);
+}
+
 .btn-secondary {
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.18);
