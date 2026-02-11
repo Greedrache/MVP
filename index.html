@@ -137,20 +137,9 @@
     </footer>
     <!-- Sticky CTA -->
     <a class="sticky-cta" href="./bewerben.html" aria-label="Mitglied werden">Mitglied werden</a>
-    <script>
-        // Popup-Logik
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get("success") === "1") {
-            const popup = document.getElementById("successPopup");
-            popup.style.display = "block";
-            setTimeout(() => {
-                popup.style.opacity = "0";
-                setTimeout(() => popup.remove(), 500);
-            }, 3000); // nach 3s ausblenden
-        }
-    </script>
 
     <script src="Javascript/headerlinks.js"></script>
+    <script src="Javascript/index.js"></script>
 </body>
 
 </html>
