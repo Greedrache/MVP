@@ -33,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nachricht .= "-------------------------------------------\n\n";
     $nachricht .= "Diese Nachricht wurde automatisch über das Bewerbungsformular auf der MVP-Website gesendet.";
     
-    $header = "From: " . $email . "\r\n";
-    $header .= "Reply-To: " . $email . "\r\n";
+    $header = "From: MVP Website <noreply@mvp-politik.de>\r\n";
+    $header .= "Reply-To: " . $name . " <" . $email . ">\r\n";
     $header .= "Content-Type: text/plain; charset=UTF-8\r\n";
     $header .= "X-Mailer: PHP/" . phpversion();
     
