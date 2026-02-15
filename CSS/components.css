@@ -90,23 +90,21 @@
 }
 
 .print-btn {
-  background-color: #f5f5f5;
-  color: #222;
-  border: 2px solid #ccc;
+  background-color: var(--mvp-accent-dark, #922B21);
+  color: #ffffff;
+  border: none;
   border-radius: 8px;
   padding: 10px 18px;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .print-btn:hover {
-  background-color: #d1b464;
-  color: white;
-  border-color: #b49430;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--mvp-accent, #C0392B);
   transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
 .print-btn:active {
