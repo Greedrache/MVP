@@ -11,7 +11,7 @@ a[href*="ec.europa.eu/consumers/odr"] {
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
-    border-left: 4px solid var(--accent-color, #000);
+    border-left: 4px solid var(--mvp-accent, #C0392B);
 }
 
 .contact-info strong {
@@ -48,4 +48,33 @@ a[href*="ec.europa.eu/consumers/odr"] {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid #eee;
+}
+
+/* Style the page headline in the Impressum */
+/* Remove the gray background from the global .headline and style Impressum title */
+.headline{
+    background: transparent !important;
+    padding: 0 !important;
+    margin-bottom: 0.75rem !important;
+    border-radius: 0 !important;
+}
+.headline h1 {
+    display: block;
+    font-size: clamp(1.75rem, 3vw + 0.5rem, 3rem);
+    line-height: 1.05;
+    text-align: center;
+    color: var(--mvp-accent-dark);
+    margin: 0 0 0.6rem;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    text-transform: none;
+}
+.headline h1::after{
+    content: "";
+    display: block;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg,var(--mvp-accent),var(--mvp-accent-dark));
+    border-radius: 3px;
+    margin: 12px auto 0;
 }
