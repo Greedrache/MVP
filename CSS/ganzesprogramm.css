@@ -1,0 +1,256 @@
+:root {
+    --mvp-accent: #C0392B;
+    --mvp-accent-dark: #922B21;
+    --page-max: 1000px;
+    --muted: #6b7280;
+    --card: #ffffff;
+}
+
+.ganzesprogramm-main {
+    max-width: var(--page-max);
+    margin: 36px auto;
+    padding: 0 1.25rem 48px;
+    box-sizing: border-box;
+}
+
+.ganzesprogramm-main .hero-inner h1 {
+    font-size: clamp(1.625rem, 3vw + 1rem, 3rem);
+    line-height: 1.05;
+    margin-bottom: .25rem;
+}
+
+.ganzesprogramm-main .hero-inner h2{
+    font-size: 1.125rem;
+    color: #ffffff;
+    margin-bottom: .75rem;
+}
+
+.ganzesprogramm-main .hero-sub {
+    max-width: 64ch;
+    margin: 0 auto 1rem;
+}
+
+.ganzesprogramm-main .pdf-download-btn {
+    margin-top: .8rem;
+}
+
+/* Keep original .grundsatz-box and .section-title from components.css — do not override here */
+
+/* Numbered sections styling specifically for sec-1 .. sec-19 */
+.ganzesprogramm-main section[id^="sec-"] {
+    position: relative;
+    padding-left: 0;
+}
+
+/* Make each section look like a readable card */
+.ganzesprogramm-main .headline {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 18px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 26px rgba(15, 23, 36, 0.04);
+    border-left: none;
+    text-align: center;
+}
+
+.ganzesprogramm-main .headline h3 {
+    font-size: 22px;
+    color: var(--mvp-accent-dark);
+    margin: 0 0 8px;
+}
+
+.ganzesprogramm-main .headline p {
+    font-size: 18px;
+    max-width: 64ch;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #24303b;
+}
+
+/* Main-specific helpers to avoid touching global styles.css */
+.ganzesprogramm-main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ganzesprogramm-main iframe,
+.ganzesprogramm-main embed,
+.ganzesprogramm-main object {
+    max-width: 100%;
+    height: auto;
+}
+
+.ganzesprogramm-main table {
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    display: block;
+}
+
+.ganzesprogramm-main pre,
+.ganzesprogramm-main code {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.ganzesprogramm-main {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Ensure block elements inside main cannot cause page overflow */
+.ganzesprogramm-main,
+.ganzesprogramm-main * {
+    box-sizing: border-box;
+}
+
+/* As a last-resort guard on very small screens, prevent horizontal scroll */
+@media (max-width: 480px) {
+    .ganzesprogramm-main {
+        overflow-x: hidden;
+    }
+}
+
+/* Small helpers */
+.ganzesprogramm-main .cta-box {
+    margin-top: 18px;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 900px) {
+    .ganzesprogramm-main {
+        padding: 0 1rem 36px;
+        margin: 24px auto;
+    }
+
+    .ganzesprogramm-main .hero-inner h1 {
+        font-size: 1.9rem;
+    }
+
+    .ganzesprogramm-main .headline {
+        padding: 14px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ganzesprogramm-main {
+        padding: 0 .75rem 28px;
+    }
+
+    .ganzesprogramm-main .hero-inner h1 {
+        font-size: 1.6rem;
+    }
+
+    .ganzesprogramm-main .hero-inner h2 {
+        font-size: 1rem;
+    }
+
+    .ganzesprogramm-main .headline {
+        padding: 12px 14px;
+        border-radius: 8px;
+    }
+
+    .ganzesprogramm-main .headline h3 {
+        font-size: 22px;
+    }
+
+    .ganzesprogramm-main .headline p {
+        font-size: 18px;
+    }
+
+    .ganzesprogramm-main p {
+        font-size: 18px;
+        max-width: 100%;
+    }
+
+    .ganzesprogramm-main .hero-sub {
+        max-width: 48ch;
+    }
+
+    .grundsatz-box {
+        padding: .8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .ganzesprogramm-main {
+        padding: 0 .6rem 20px;
+    }
+
+    .ganzesprogramm-main .hero-inner h1 {
+        font-size: 1.625rem;
+    }
+
+    .ganzesprogramm-main .headline {
+        padding: 10px 12px;
+        margin-bottom: 14px;
+    }
+
+    .ganzesprogramm-main .headline h3 {
+        font-size: 22px;
+    }
+
+    .ganzesprogramm-main .headline p {
+        font-size: 18px;
+    }
+
+    .ganzesprogramm-main p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    .ganzesprogramm-main {
+        padding: 0 .5rem 16px;
+    }
+
+    .ganzesprogramm-main .hero-inner h1 {
+        font-size: 1.625rem;
+    }
+
+    .ganzesprogramm-main .headline {
+        padding: 10px 12px;
+        border-radius: 6px;
+    }
+
+    .ganzesprogramm-main .headline h3 {
+        font-size: 22px;
+    }
+
+    .ganzesprogramm-main .headline p {
+        font-size: 18px;
+    }
+
+    .ganzesprogramm-main p {
+        font-size: 18px;
+    }
+}
+
+/* Print: make it clean */
+@media print {
+
+    .hero,
+    .cta-box,
+    .sticky-cta,
+    header,
+    footer {
+        display: none !important;
+    }
+
+    .ganzesprogramm-main {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ganzesprogramm-main .headline {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        margin: 0 0 12px;
+    }
+}
