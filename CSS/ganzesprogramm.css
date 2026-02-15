@@ -34,15 +34,12 @@
     margin-top: .8rem;
 }
 
-/* Keep original .grundsatz-box and .section-title from components.css — do not override here */
 
-/* Numbered sections styling specifically for sec-1 .. sec-19 */
 .ganzesprogramm-main section[id^="sec-"] {
     position: relative;
     padding-left: 0;
 }
 
-/* Make each section look like a readable card */
 .ganzesprogramm-main .headline {
     background: var(--card);
     border-radius: 10px;
@@ -67,7 +64,6 @@
     color: #24303b;
 }
 
-/* Main-specific helpers to avoid touching global styles.css */
 .ganzesprogramm-main img {
     max-width: 100%;
     height: auto;
@@ -101,25 +97,21 @@
     width: 100%;
 }
 
-/* Ensure block elements inside main cannot cause page overflow */
 .ganzesprogramm-main,
 .ganzesprogramm-main * {
     box-sizing: border-box;
 }
 
-/* As a last-resort guard on very small screens, prevent horizontal scroll */
 @media (max-width: 480px) {
     .ganzesprogramm-main {
         overflow-x: hidden;
     }
 }
 
-/* Small helpers */
 .ganzesprogramm-main .cta-box {
     margin-top: 18px;
 }
 
-/* Responsive adjustments */
 
 @media (max-width: 900px) {
     .ganzesprogramm-main {
@@ -230,7 +222,6 @@
     }
 }
 
-/* Print: make it clean */
 @media print {
 
     .hero,

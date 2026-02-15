@@ -20,7 +20,6 @@
     text-align: center;
 }
 
-/* Page headline: remove global gray panel and style title */
 .headline{
     background: transparent !important;
     padding: 0 !important;
@@ -35,7 +34,7 @@
     color: var(--mvp-accent-dark);
     font-weight: 800;
 }
-.headline p{ /* subtitle */
+.headline p{ 
     margin: 0 0 1rem;
     color: #555;
     font-size: 1rem;

@@ -272,7 +272,6 @@
   font-size: 0.95rem;
 }
 
-/* MVP link styling for prominent in-content links */
 .mvp-link {
   color: #C0392B;
   text-decoration: none;
@@ -288,7 +287,6 @@
   transform: translateY(-1px);
 }
 
-/* small form-accept tweaks */
 .form-accept { margin: .6rem 0; font-size: .98rem; }
 .form-accept label { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
 .form-accept input[type="checkbox"] { width: 18px; height: 18px; }
@@ -590,7 +588,6 @@ form button:hover {
   }
 }
 
-/* Hero, Facts, Policies responsive */
 @media (max-width: 1024px) {
   .hero {
     padding: 64px 18px;
