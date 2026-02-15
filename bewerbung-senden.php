@@ -1,16 +1,22 @@
 <?php
-$empfaenger = "monarchistische.volkspartei@gmail.com";
+$empfaenger = "info@mvp-politik.de";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $name = isset($_POST['name']) ? htmlspecialchars(strip_tags($_POST['name'])) : '';
     $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) : '';
-    $adresse = isset($_POST['adresse']) ? htmlspecialchars(strip_tags($_POST['adresse'])) : 'Nicht angegeben';
-    $warum = isset($_POST['warum']) ? htmlspecialchars(strip_tags($_POST['warum'])) : '';
+    // Adresse removed from form; no longer processed
+    // 'Warum' field removed from form; no longer collected or required
     
     // Validierung
-    if (empty($name) || empty($email) || empty($warum)) {
+    if (empty($name) || empty($email)) {
         header("Location: bewerben.html?status=fehler&grund=felder");
+        exit;
+    }
+
+    // Zustimmung zu Satzung/Impressum prüfen
+    if (!isset($_POST['accept']) || $_POST['accept'] !== 'on') {
+        header("Location: bewerben.html?status=fehler&grund=akzeptieren");
         exit;
     }
     
@@ -25,12 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nachricht = "Neue Mitgliedsbewerbung über die Website\n";
     $nachricht .= "==========================================\n\n";
     $nachricht .= "Name: " . $name . "\n";
-    $nachricht .= "E-Mail: " . $email . "\n";
-    $nachricht .= "Adresse: " . $adresse . "\n\n";
-    $nachricht .= "Motivation:\n";
-    $nachricht .= "-------------------------------------------\n";
-    $nachricht .= $warum . "\n";
-    $nachricht .= "-------------------------------------------\n\n";
+    $nachricht .= "E-Mail: " . $email . "\n\n";
+    // Motivation field removed from form
     $nachricht .= "Diese Nachricht wurde automatisch über das Bewerbungsformular auf der MVP-Website gesendet.";
     
     $header = "From: MVP Website <noreply@mvp-politik.de>\r\n";

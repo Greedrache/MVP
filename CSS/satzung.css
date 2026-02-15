@@ -1,0 +1,93 @@
+
+:root{
+    --bg: #f7f9fb;
+    --card: #ffffff;
+    --accent: #2b6ea3;
+    --muted: #6b7280;
+    --max-width: 1100px;
+}
+
+body {
+    background: var(--bg);
+    color: #0f1724;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-size: 18px;
+}
+
+.container{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.satzung-main{
+    width: auto;
+    max-width: var(--max-width);
+    margin: 32px auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.satzung-main{ padding-bottom: 1rem; }
+
+.satzung-content{
+    display: block;
+}
+
+.satzung-content img{ max-width:100%; height:auto; display:block; }
+.satzung-content, .satzung-main{ overflow-wrap:anywhere; word-break:break-word; }
+
+.satzung-content h1{
+    font-size: 32px; /* prominent */
+    margin: 0 0 .25rem 0;
+}
+.satzung-content h2{
+    font-size: 26px;
+    margin: 0 0 1rem 0;
+    color: var(--muted);
+    font-weight: 400;
+}
+.headline h3{ font-size: 22px; margin: 0 0 .5rem 0; color: var(--accent); }
+
+.headline{
+    background: var(--card);
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+    box-shadow: 0 1px 0 rgba(15,23,36,0.04);
+    margin: 0 0 1rem 0;
+}
+
+.headline p{ margin: 0; color: #24303b; line-height:1.6; font-size: 18px; }
+
+footer#kontakt{ margin-top: 2rem; }
+
+@media (max-width: 900px){
+    .container{ padding: 1.25rem .75rem; }
+    .satzung-content h1{ font-size: 28px; }
+    .satzung-content h2{ font-size: 24px; }
+    .headline h3{ font-size: 22px; }
+    body{ font-size: 18px; }
+    .headline{ padding: .9rem 1rem; }
+}
+
+@media (max-width: 480px){
+    .container{ padding: 1rem .6rem; }
+    .satzung-main{ margin: 18px auto; padding: 0 .6rem; }
+    .satzung-content h1{ font-size: 26px; }
+    .satzung-content h2{ font-size: 22px; }
+    .headline h3{ font-size: 22px; }
+    .headline{ padding: .8rem .9rem; }
+    .headline p{ font-size: 18px; }
+}
+
+@media (max-width: 320px){
+    .container{ padding: .6rem .5rem; }
+    .satzung-main{ margin: 12px auto; padding: 0 .5rem; }
+    .satzung-content h1{ font-size: 24px; }
+    .satzung-content h2{ font-size: 22px; }
+    .headline h3{ font-size: 22px; }
+    .headline p{ font-size: 18px; }
+    .headline{ padding: .6rem .7rem; border-radius: 6px; }
+}
+
+.satzung-content a{ color: var(--accent); text-decoration: underline; }

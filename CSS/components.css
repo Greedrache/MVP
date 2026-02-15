@@ -274,6 +274,40 @@
   font-size: 0.95rem;
 }
 
+/* MVP link styling for prominent in-content links */
+.mvp-link {
+  color: #C0392B;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+.mvp-link:hover,
+.mvp-link:focus {
+  color: #922B21;
+  border-color: #f8d46a;
+  transform: translateY(-1px);
+}
+
+/* small form-accept tweaks */
+.form-accept { margin: .6rem 0; font-size: .98rem; }
+.form-accept label { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.form-accept input[type="checkbox"] { width: 18px; height: 18px; }
+.form-accept .mvp-link { white-space: normal; }
+
+@media (max-width: 480px) {
+  .form-accept { font-size: 0.96rem; }
+  .form-accept label { flex-direction: column; align-items: flex-start; gap: .35rem; }
+  .form-accept input[type="checkbox"] { width: 20px; height: 20px; }
+  .mvp-link { display: inline; }
+}
+
+@media (max-width: 320px) {
+  .form-accept { font-size: 0.92rem; }
+  .form-accept label { gap: .25rem; }
+}
+
 .toc strong {
   display: block;
   margin-bottom: 4px;

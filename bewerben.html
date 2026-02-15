@@ -42,7 +42,7 @@
         <h2>Gestalte Politik mit — regional und digital.</h2>
         <p class="hero-sub">Werde Teil unserer Gemeinschaft und unterstütze Initiativen in deiner Region.</p>
         <div class="hero-ctas">
-          <a class="btn-primary" href="#bewerbungsformular">Jetzt bewerben</a>
+          <!-- 'Jetzt bewerben' button removed as requested -->
         </div>
       </div>
     </section>
@@ -57,11 +57,16 @@
         <label for="email">E-Mail</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="adresse">Adresse</label>
-        <input type="text" id="adresse" name="adresse">
+        <!-- Adresse field removed per request -->
 
-        <label for="warum">Warum möchtest du Mitglied werden?</label>
-        <textarea style="resize: none;" id="warum" name="warum" rows="5" required></textarea>
+        <!-- "Warum" field removed per request -->
+
+        <div class="form-accept">
+          <label for="accept">
+            <input type="checkbox" id="accept" name="accept" required>
+            Ich akzeptiere die <a class="mvp-link" href="./satzung.html" target="_blank">Satzung</a> und habe das <a class="mvp-link" href="./impressum.html" target="_blank">Impressum</a> gelesen.
+          </label>
+        </div>
 
         <button type="submit" class="btn-primary">Bewerbung absenden</button>
       </form>
