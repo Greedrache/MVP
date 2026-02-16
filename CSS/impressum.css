@@ -16,6 +16,13 @@ a[href*="ec.europa.eu/consumers/odr"]:hover {
     border-bottom-color: var(--mvp-accent, #C0392B);
 }
 
+/* Ensure long external links wrap inside legal sections to avoid overflow */
+.legal-section a[href^="http"] {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+}
+
 .contact-info {
     background: #f9f9f9;
     padding: 2rem;
@@ -102,4 +109,16 @@ a[href^="tel:"]:hover {
     background: linear-gradient(90deg,var(--mvp-accent),var(--mvp-accent-dark));
     border-radius: 3px;
     margin: 12px auto 0;
+}
+
+/* Match the Datenschutz heading to the main H1 size and add top spacing */
+.datenschutz-heading {
+    display: block;
+    font-size: clamp(1.75rem, 3vw + 0.5rem, 3rem);
+    line-height: 1.05;
+    text-align: center;
+    color: var(--mvp-accent-dark);
+    margin-top: 200px;
+    margin-bottom: 0.75rem;
+    font-weight: 800;
 }
