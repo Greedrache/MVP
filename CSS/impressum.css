@@ -16,7 +16,6 @@ a[href*="ec.europa.eu/consumers/odr"]:hover {
     border-bottom-color: var(--mvp-accent, #C0392B);
 }
 
-/* Ensure long external links wrap inside legal sections to avoid overflow */
 .legal-section a[href^="http"] {
     overflow-wrap: anywhere;
     word-break: break-word;
