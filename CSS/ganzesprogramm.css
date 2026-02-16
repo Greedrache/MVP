@@ -44,7 +44,6 @@ html {
 
 .ganzesprogramm-main section[id^="sec-"] {
     position: relative;
-    padding-left: 0;
 }
 
 .ganzesprogramm-main .headline {
