@@ -104,7 +104,7 @@
 .print-btn:hover {
   background-color: var(--mvp-accent, #C0392B);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .print-btn:active {
@@ -280,6 +280,7 @@
   padding-bottom: 2px;
   transition: color 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
 }
+
 .mvp-link:hover,
 .mvp-link:focus {
   color: #922B21;
@@ -287,21 +288,56 @@
   transform: translateY(-1px);
 }
 
-.form-accept { margin: .6rem 0; font-size: .98rem; }
-.form-accept label { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
-.form-accept input[type="checkbox"] { width: 18px; height: 18px; }
-.form-accept .mvp-link { white-space: normal; }
+.form-accept {
+  margin: .6rem 0;
+  font-size: .98rem;
+}
+
+.form-accept label {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-accept input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.form-accept .mvp-link {
+  white-space: normal;
+}
 
 @media (max-width: 480px) {
-  .form-accept { font-size: 0.96rem; }
-  .form-accept label { flex-direction: column; align-items: flex-start; gap: .35rem; }
-  .form-accept input[type="checkbox"] { width: 20px; height: 20px; }
-  .mvp-link { display: inline; }
+  .form-accept {
+    font-size: 0.96rem;
+  }
+
+  .form-accept label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .35rem;
+  }
+
+  .form-accept input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mvp-link {
+    display: inline;
+  }
 }
 
 @media (max-width: 320px) {
-  .form-accept { font-size: 0.92rem; }
-  .form-accept label { gap: .25rem; }
+  .form-accept {
+    font-size: 0.92rem;
+  }
+
+  .form-accept label {
+    gap: .25rem;
+  }
 }
 
 .toc strong {
@@ -448,6 +484,19 @@ form button:hover {
 .cta-box a:hover {
   color: #cfa73e;
   text-decoration: underline;
+}
+
+.pdf-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pdf-download-btn .pdf-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: inline-block;
 }
 
 .unterschrift {
@@ -683,5 +732,83 @@ form button:hover {
 
   .sticky-cta {
     display: none;
+  }
+}
+
+.lead-section {
+  max-width: 920px;
+  margin: 28px auto 18px;
+  padding: 18px 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.lead-section h2 {
+  margin: 0 0 10px 0;
+  color: #153A5B;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.lead-section p {
+  margin: 10px 0;
+  color: #222;
+  font-size: 1rem;
+}
+
+.lead-section p strong {
+  display: block;
+  color: #111;
+  font-size: 1.03rem;
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  .lead-section {
+    padding: 14px 12px;
+    margin-top: 18px;
+  }
+
+  .lead-section h2 {
+    font-size: 1.35rem;
+  }
+}
+
+.lead-claims {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 14px;
+}
+
+.lead-claims .claim {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lead-claims .claim-title {
+  font-weight: 800;
+  color: #153A5B;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+@media (max-width: 680px) {
+  .lead-claims {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lead-claims .claim {
+    min-width: auto;
   }
 }
