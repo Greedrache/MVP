@@ -398,6 +398,25 @@ details summary::-webkit-details-marker {
   object-fit: cover;
 }
 
+.icon-input {
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 22px 22px;
+  padding-left: 46px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+}
+
+#name.icon-input {
+  background-image: url("../img/name.png");
+}
+
+#email.icon-input {
+  background-image: url("../img/mail.png");
+}
+
 .card-actions {
   margin-top: 10px;
   display: flex;
