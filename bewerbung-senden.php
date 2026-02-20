@@ -5,7 +5,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $name = isset($_POST['name']) ? htmlspecialchars(strip_tags($_POST['name'])) : '';
     $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) : '';
+    $phone = isset($_POST['phone']) ? htmlspecialchars(strip_tags($_POST['phone'])) : '';
+    $message = isset($_POST['message']) ? htmlspecialchars(strip_tags($_POST['message'])) : '';
+    $website = isset($_POST['website']) ? $_POST['website'] : '';
     
+    if (!empty($website)) {
+        header("Location: bewerben.html?status=erfolg");
+        exit;
+    }
+
     if (empty($name) || empty($email)) {
         header("Location: bewerben.html?status=fehler&grund=felder");
         exit;
@@ -27,7 +35,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nachricht = "Neue Mitgliedsbewerbung über die Website\n";
     $nachricht .= "==========================================\n\n";
     $nachricht .= "Name: " . $name . "\n";
-    $nachricht .= "E-Mail: " . $email . "\n\n";
+    $nachricht .= "E-Mail: " . $email . "\n";
+    
+    if (!empty($phone)) {
+        $nachricht .= "Telefon: " . $phone . "\n";
+    }
+    
+    if (!empty($message)) {
+        $nachricht .= "\nNachricht:\n" . $message . "\n";
+    }
+    
+    $nachricht .= "\n==========================================\n";
     $nachricht .= "Diese Nachricht wurde automatisch über das Bewerbungsformular auf der MVP-Website gesendet.";
     
     $header = "From: MVP Website <noreply@mvp-politik.de>\r\n";

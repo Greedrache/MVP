@@ -417,6 +417,15 @@ details summary::-webkit-details-marker {
   background-image: url("../img/mail.png");
 }
 
+#phone.icon-input {
+  background-image: url("../img/telefon.png");
+}
+
+#message.icon-input {
+  background-image: none;
+  padding-left: 12px;
+}
+
 .card-actions {
   margin-top: 10px;
   display: flex;
@@ -433,22 +442,52 @@ details summary::-webkit-details-marker {
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
   max-width: 600px;
   margin: 40px auto;
-  background-color: #F2F2F2;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+form label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: -8px;
+  font-size: 0.95rem;
 }
 
 form input,
 form textarea,
 form select {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #d0d0d0;
   font-size: 16px;
+  background-color: #fafafa;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border-color: #C0392B;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+}
+
+.privacy-note {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  margin-top: -5px;
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 3px solid #C0392B;
 }
 
 form button {
