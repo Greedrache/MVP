@@ -12,28 +12,28 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-          <a href="./"><img class="logoimg" src="img/logo.jpeg" alt="Logo" loading="eager"></a>
+  <header>
+    <div class="header-container">
+      <a href="./"><img class="logoimg" src="img/logo.jpeg" alt="Logo" loading="eager"></a>
 
-            <div class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-            <nav>
-                <ul class="headerlinks" id="headerlinks">
-                    <li><a href="./ganzesprogramm.html">Programm</a></li>
-                    <li><a href="./about.html">Über MVP</a></li>
-                    <li><a href="./bewerben.html">Mitmachen</a></li>
-                    <li><a href="./kontakt.html">Kontakt</a></li>
-                    <li><a href="./faq.html">Häufige Fragen</a></li>
-                    <li><a href="./social.html">Social</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+      <nav>
+        <ul class="headerlinks" id="headerlinks">
+          <li><a href="./ganzesprogramm.html">Programm</a></li>
+          <li><a href="./about.html">Über MVP</a></li>
+          <li><a href="./bewerben.html">Mitmachen</a></li>
+          <li><a href="./kontakt.html">Kontakt</a></li>
+          <li><a href="./faq.html">Häufige Fragen</a></li>
+          <li><a href="./social.html">Social</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <section class="hero">
@@ -48,27 +48,32 @@
 
     <section id="bewerbungsformular" class="bewerbungsformular fade-up">
       <h2>Bewerbungsformular</h2>
-      <div id="formular-status" aria-live="polite"></div>
-      <form id="bewerbungs-form" action="bewerbung-senden.php" method="POST" aria-describedby="formular-status" autocomplete="off">
+      <div id="formular-status" aria-live="polite" role="status"></div>
+      <form id="bewerbungs-form" action="bewerbung-senden.php" method="POST" aria-describedby="formular-status"
+        novalidate>
         <input type="hidden" id="csrf_token" name="csrf_token" value="">
 
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" class="icon-input" autocomplete="new-password" required aria-describedby="name-error">
+        <input type="text" id="name" name="name" class="icon-input" autocomplete="name" required minlength="2"
+          maxlength="100" aria-describedby="name-error">
         <span id="name-error" class="error-message" aria-live="polite"></span>
 
         <label for="email">E-Mail</label>
-        <input type="email" id="email" name="email" class="icon-input" autocomplete="new-password" required aria-describedby="email-error">
+        <input type="email" id="email" name="email" class="icon-input" autocomplete="email" required maxlength="254"
+          aria-describedby="email-error">
         <span id="email-error" class="error-message" aria-live="polite"></span>
 
         <label for="phone">Telefon (optional)</label>
-        <input type="tel" id="phone" name="phone" class="icon-input" autocomplete="new-password" aria-describedby="phone-error">
+        <input type="tel" id="phone" name="phone" class="icon-input" autocomplete="tel" inputmode="tel" maxlength="30"
+          pattern="[0-9+\-\s()]+" aria-describedby="phone-error">
         <span id="phone-error" class="error-message" aria-live="polite"></span>
 
         <label for="message">Kurz zu dir (optional)</label>
-        <textarea id="message" name="message" rows="4" class="icon-input" placeholder="Was möchtest du beitragen?" style="resize:none; min-height:90px;" autocomplete="new-password" aria-describedby="message-error"></textarea>
+        <textarea id="message" name="message" rows="4" class="icon-input" placeholder="Was möchtest du beitragen?"
+          maxlength="2000" aria-describedby="message-error"></textarea>
         <span id="message-error" class="error-message" aria-live="polite"></span>
 
-        <div style="display:none" aria-hidden="true">
+        <div class="hp-field" aria-hidden="true">
           <label for="website">Website</label>
           <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
         </div>
@@ -76,13 +81,18 @@
         <div class="form-accept">
           <label for="accept">
             <input type="checkbox" id="accept" name="accept" required aria-describedby="accept-error">
-            <span>Ich willige in die Verarbeitung meiner Daten gemäß der <a class="mvp-link" href="./impressum.html" target="_blank" rel="noopener">Datenschutzerklärung</a> ein und akzeptiere die <a class="mvp-link" href="./satzung.html" target="_blank" rel="noopener">Satzung</a>.</span>
+            <span>Ich willige in die Verarbeitung meiner Daten gemäß der <a class="mvp-link" href="./impressum.html"
+                target="_blank" rel="noopener">Datenschutzerklärung</a> ein und akzeptiere die <a class="mvp-link"
+                href="./satzung.html" target="_blank" rel="noopener">Satzung</a>.</span>
           </label>
-          <span id="accept-error" class="error-message" aria-live="polite" style="display:block; margin-top:5px;"></span>
+          <span id="accept-error" class="error-message" aria-live="polite"
+            style="display:block; margin-top:5px;"></span>
         </div>
 
         <p class="privacy-note">
-          <strong>Datenschutz:</strong> Deine Angaben verwenden wir ausschließlich zur Bearbeitung deiner Bewerbung und zur kurzfristigen Kontaktaufnahme. Weitere Informationen findest du in unserer <a class="mvp-link" href="./impressum.html" rel="noopener">Datenschutzerklärung</a>.
+          <strong>Datenschutz:</strong> Deine Angaben verwenden wir ausschließlich zur Bearbeitung deiner Bewerbung und
+          zur kurzfristigen Kontaktaufnahme. Weitere Informationen findest du in unserer <a class="mvp-link"
+            href="./impressum.html" rel="noopener">Datenschutzerklärung</a>.
         </p>
 
         <button type="submit" id="submitBtn" class="btn-primary">Bewerbung absenden</button>

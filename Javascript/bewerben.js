@@ -4,91 +4,149 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('submitBtn');
   const csrfInput = document.getElementById('csrf_token');
 
-  fetch('csrf-token.php')
-    .then(response => response.json())
-    .then(data => {
-      if (data.csrf_token) {
-        csrfInput.value = data.csrf_token;
-      }
-    })
-    .catch(error => console.error('Fehler beim Laden des CSRF-Tokens:', error));
+  /* ---------- CSRF-Token laden ---------- */
+  function loadCsrfToken() {
+    return fetch('csrf-token.php')
+      .then(r => r.json())
+      .then(data => {
+        if (data.csrf_token) csrfInput.value = data.csrf_token;
+      })
+      .catch(err => console.error('CSRF-Token konnte nicht geladen werden:', err));
+  }
+  loadCsrfToken();
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  /* ---------- Hilfsfunktionen ---------- */
+  function setFieldError(id, msg) {
+    const input = document.getElementById(id);
+    const errorEl = document.getElementById(id + '-error');
+    if (errorEl) errorEl.textContent = msg;
+    if (input) input.setAttribute('aria-invalid', 'true');
+  }
 
-    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-    statusDiv.innerHTML = '';
-    statusDiv.style.cssText = '';
+  function clearFieldError(id) {
+    const input = document.getElementById(id);
+    const errorEl = document.getElementById(id + '-error');
+    if (errorEl) errorEl.textContent = '';
+    if (input) input.removeAttribute('aria-invalid');
+  }
 
-    let isValid = true;
+  function clearAllErrors() {
+    ['name', 'email', 'phone', 'message', 'accept'].forEach(clearFieldError);
+    statusDiv.textContent = '';
+    statusDiv.className = '';
+  }
+
+  function showStatus(msg, type) {
+    statusDiv.textContent = msg;
+    statusDiv.className = type === 'success' ? 'formular-erfolg' : 'formular-fehler';
+    statusDiv.setAttribute('role', type === 'success' ? 'status' : 'alert');
+    statusDiv.focus();
+  }
+
+  function setLoading(loading) {
+    submitBtn.disabled = loading;
+    submitBtn.textContent = loading ? 'Wird gesendet\u2026' : 'Bewerbung absenden';
+    submitBtn.setAttribute('aria-busy', String(loading));
+  }
+
+  /* ---------- Live-Validierung ---------- */
+  form.addEventListener('input', (e) => {
+    const id = e.target.id;
+    if (['name', 'email', 'phone', 'message'].includes(id)) clearFieldError(id);
+  });
+  form.addEventListener('change', (e) => {
+    if (e.target.id === 'accept') clearFieldError('accept');
+  });
+
+  /* ---------- Client-Validierung ---------- */
+  function validate() {
+    let valid = true;
+    const firstInvalid = [];
+
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
     const accept = document.getElementById('accept').checked;
 
-    if (!name) {
-      document.getElementById('name-error').textContent = 'Bitte gib deinen Namen an.';
-      isValid = false;
-    }
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      document.getElementById('email-error').textContent = 'Bitte gib eine gültige E-Mail-Adresse an.';
-      isValid = false;
-    }
-    if (phone && !/^[0-9\+\-\s\(\)]+$/.test(phone)) {
-      document.getElementById('phone-error').textContent = 'Bitte gib eine gültige Telefonnummer an (nur Zahlen und + - ( ) erlaubt).';
-      isValid = false;
-    }
-    if (!accept) {
-      document.getElementById('accept-error').textContent = 'Du musst der Datenschutzerklärung zustimmen.';
-      isValid = false;
+    if (!name || name.length < 2) {
+      setFieldError('name', 'Bitte gib deinen Namen an (mind. 2 Zeichen).');
+      firstInvalid.push('name');
+      valid = false;
     }
 
-    if (!isValid) {
-      statusDiv.innerHTML = '<p class="fehler-meldung">✗ Bitte überprüfe deine Eingaben in den markierten Feldern.</p>';
-      statusDiv.style.cssText = 'background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;';
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      setFieldError('email', 'Bitte gib eine gültige E-Mail-Adresse an.');
+      firstInvalid.push('email');
+      valid = false;
+    }
+
+    if (phone && !/^[0-9+\-\s()]+$/.test(phone)) {
+      setFieldError('phone', 'Nur Zahlen und + - ( ) erlaubt.');
+      firstInvalid.push('phone');
+      valid = false;
+    }
+
+    if (message && message.length > 2000) {
+      setFieldError('message', 'Maximal 2000 Zeichen erlaubt.');
+      firstInvalid.push('message');
+      valid = false;
+    }
+
+    if (!accept) {
+      setFieldError('accept', 'Du musst der Datenschutzerklärung zustimmen.');
+      firstInvalid.push('accept');
+      valid = false;
+    }
+
+    // Fokus auf erstes fehlerhaftes Feld
+    if (firstInvalid.length > 0) {
+      document.getElementById(firstInvalid[0]).focus();
+    }
+
+    return valid;
+  }
+
+  /* ---------- Absenden ---------- */
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearAllErrors();
+
+    if (!validate()) {
+      showStatus('Bitte überprüfe deine Eingaben.', 'error');
       return;
     }
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Wird gesendet...';
+    setLoading(true);
 
     try {
       const formData = new FormData(form);
       const response = await fetch('bewerbung-senden.php', {
         method: 'POST',
         body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
       });
 
       const result = await response.json();
 
       if (response.ok && result.success) {
-        statusDiv.innerHTML = `<p class="erfolg-meldung">✓ ${result.message}</p>`;
-        statusDiv.style.cssText = 'background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;';
+        showStatus(result.message || 'Bewerbung erfolgreich gesendet!', 'success');
         form.reset();
-        fetch('csrf-token.php')
-          .then(res => res.json())
-          .then(data => { if (data.csrf_token) csrfInput.value = data.csrf_token; });
+        loadCsrfToken();
       } else {
-        statusDiv.innerHTML = `<p class="fehler-meldung">✗ ${result.message || 'Ein Fehler ist aufgetreten.'}</p>`;
-        statusDiv.style.cssText = 'background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;';
-
+        // Server-Feldvalidierungsfehler übernehmen
         if (result.errors) {
-          for (const [field, message] of Object.entries(result.errors)) {
-            const errorEl = document.getElementById(`${field}-error`);
-            if (errorEl) errorEl.textContent = message;
-          }
+          const fields = Object.keys(result.errors);
+          fields.forEach(field => setFieldError(field, result.errors[field]));
+          if (fields.length > 0) document.getElementById(fields[0]).focus();
         }
+        showStatus(result.message || 'Ein Fehler ist aufgetreten.', 'error');
       }
-    } catch (error) {
-      console.error('Netzwerkfehler:', error);
-      statusDiv.innerHTML = '<p class="fehler-meldung">✗ Netzwerkfehler. Bitte überprüfe deine Verbindung und versuche es erneut.</p>';
-      statusDiv.style.cssText = 'background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;';
+    } catch (err) {
+      console.error('Netzwerkfehler:', err);
+      showStatus('Netzwerkfehler – bitte überprüfe deine Verbindung und versuche es erneut.', 'error');
     } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Bewerbung absenden';
+      setLoading(false);
     }
   });
 });

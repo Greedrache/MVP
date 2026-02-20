@@ -479,6 +479,63 @@ form select:focus {
   box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
 }
 
+/* Honeypot – visuell versteckt, für Bots sichtbar */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/* Textarea im Bewerbungsformular */
+.bewerbungsformular textarea {
+  resize: none;
+  min-height: 90px;
+}
+
+/* Fehlerzustand für Inputs */
+form input[aria-invalid="true"],
+form textarea[aria-invalid="true"] {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.18);
+}
+
+.error-message {
+  color: #c0392b;
+  font-size: 0.88rem;
+  min-height: 1.2em;
+}
+
+/* Status-Meldungen */
+.formular-erfolg {
+  background: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.formular-fehler {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Lade-Button */
+.btn-primary:disabled,
+form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .privacy-note {
   font-size: 0.85rem;
   color: #666;
