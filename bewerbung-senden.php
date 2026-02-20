@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     
-    // E-Mail zusammenstellen
     $betreff = "Neue MVP Mitgliedsbewerbung von " . $name;
     
     $nachricht = "Neue Mitgliedsbewerbung über die Website\n";
