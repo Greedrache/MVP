@@ -33,7 +33,7 @@ if (!empty($website)) {
 }
 
 $now = time();
-$window = 300; // 5 Minuten
+$window = 300; 
 $maxRequests = 3;
 
 if (!isset($_SESSION['rate_limit'])) {
