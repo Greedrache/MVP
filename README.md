@@ -5,7 +5,7 @@
 </p>
 
 <p>
-Official website of MVP (Mitbestimmungspartei) – a political project focused on direct participation, transparency, and strengthening local structures.
+Official website of MVP – a political project focused on direct participation, transparency, and strengthening local structures.
 </p>
 
 <p>
