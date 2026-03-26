@@ -118,6 +118,98 @@ html {
     margin-top: 18px;
 }
 
+.phasen-intro {
+    max-width: 64ch;
+    margin: 1.5rem auto 1rem;
+    font-size: 18px;
+    color: #24303b;
+}
+
+.phasen-table-wrapper {
+    max-width: 64ch;
+    margin: 0 auto 1.25rem;
+}
+
+.phasen-table {
+    width: 100%;
+    border-collapse: collapse;
+    display: table;
+    background: transparent;
+    border-left: 3px solid var(--mvp-accent);
+}
+
+.phasen-table tr {
+    border-bottom: 1px solid rgba(192, 57, 43, 0.2);
+}
+
+.phasen-table tr:last-child {
+    border-bottom: none;
+}
+
+.phasen-table td {
+    padding: 16px 14px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.phasen-table .phase-label {
+    width: 140px;
+    min-width: 120px;
+}
+
+.phasen-table .phase-name {
+    display: block;
+    font-size: 0.85em;
+    color: var(--mvp-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.phasen-table .phase-title {
+    display: block;
+    font-size: 1.15em;
+    font-weight: 700;
+    color: var(--mvp-accent-dark);
+    margin: 2px 0 4px;
+}
+
+.phasen-table .phase-trigger {
+    display: block;
+    font-size: 0.85em;
+    color: var(--muted);
+}
+
+.phasen-table .phase-desc {
+    color: #24303b;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+@media (max-width: 600px) {
+    .phasen-table,
+    .phasen-table tbody,
+    .phasen-table tr,
+    .phasen-table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .phasen-table tr {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(192, 57, 43, 0.2);
+    }
+    
+    .phasen-table .phase-label {
+        width: 100%;
+        padding-bottom: 6px;
+    }
+    
+    .phasen-table .phase-desc {
+        padding-top: 0;
+    }
+}
+
 
 @media (max-width: 900px) {
     .ganzesprogramm-main {
