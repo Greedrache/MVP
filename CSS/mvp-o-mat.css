@@ -1,0 +1,36 @@
+.btn-mvpomat-start {
+    display: inline-block;
+    background-color: #f5d166; 
+    color: #1a2b4c; 
+    border: none; 
+    padding: 15px 45px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.btn-mvpomat-start:hover {
+    background-color: #ffd973; 
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(245, 209, 102, 0.3);
+}
+
+.btn-mvpomat-start:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .btn-mvpomat-start {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 14px 20px;
+    }
+}
