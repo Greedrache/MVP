@@ -12,7 +12,11 @@ const matContainer = document.getElementById('mvpomat-container');
 const quizCard = document.getElementById('quiz-card');
 const resultCard = document.getElementById('result-card');
 
-startBtn.addEventListener('click', startMvpOMat);
+if (startBtn) {
+    startBtn.addEventListener('click', startMvpOMat);
+} else {
+    console.warn('Start button #startMatBtn nicht gefunden; Start-Event wurde nicht registriert.');
+}
 
 async function startMvpOMat() {
     // 1. Oberflächen wechseln
@@ -22,8 +26,11 @@ async function startMvpOMat() {
     
     try {
         const response = await fetch(BACKEND_URL);
-        if (!response.ok) throw new Error('Netzwerk-Fehler beim Laden der Thesen');
-        
+        if (!response.ok) {
+            const bodyText = await response.text().catch(() => '');
+            throw new Error(`HTTP ${response.status} ${response.statusText} ${bodyText}`);
+        }
+
         statements = await response.json();
         
         if(statements.length > 15) {
@@ -33,8 +40,10 @@ async function startMvpOMat() {
         showQuestion();
     } catch (error) {
         console.error(error);
-        document.getElementById('statement-text').innerText = 
-            "Fehler beim Laden der Fragen. Bitte überprüfe deine Internetverbindung oder versuche es später noch einmal.";
+            const stmtEl = document.getElementById('statement-text');
+            if (stmtEl) {
+                stmtEl.innerText = `Fehler beim Laden der Fragen: ${error.message}`;
+            }
     }
 }
 
