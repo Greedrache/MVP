@@ -34,3 +34,88 @@
         padding: 14px 20px;
     }
 }
+
+/* Quiz layout and vote buttons */
+#quiz-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(28, 40, 60, 0.06);
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-answer {
+    border: none;
+    padding: 0.85rem 1.4rem;
+    font-size: 1.02rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    min-width: 140px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.12s ease;
+    box-shadow: 0 6px 14px rgba(20, 30, 50, 0.06);
+    color: #fff;
+    background-color: #1a2b4c; /* unified color */
+    border: 1px solid rgba(26,43,76,0.12);
+}
+
+.btn-answer:active { transform: translateY(1px); }
+.btn-answer:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(20,30,50,0.10); background-color: #274263; }
+
+/* keep button background enforced to avoid unreadable white-on-white */
+.btn-answer { color: #fff; background-color: #1a2b4c; }
+.btn-answer:focus-visible { outline: 3px solid rgba(37,66,99,0.18); outline-offset: 3px; }
+
+/* removed emoji helper (no longer used) */
+
+/* Result collapsible styling */
+#comparison-list details {
+    margin-bottom: 1rem;
+    border: 1px solid #e9edf2;
+    border-radius: 8px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+#comparison-list summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.9rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+#comparison-list summary::-webkit-details-marker { display: none; }
+
+#comparison-list summary::after {
+    content: "+";
+    font-weight: 700;
+    color: #1a2b4c;
+    margin-left: 1rem;
+}
+
+#comparison-list details[open] summary::after { content: "−"; }
+
+.details-body { padding: 1rem; border-top: 1px solid #f3f5f8; background: #fbfdff; color: #334; }
+.details-body .stmt-text { font-style: italic; color: #556; margin-bottom: 0.6rem; }
+.details-body .mvp-expl { margin-top: 0.6rem; padding: 0.6rem; background: #f6f8fb; border-left: 4px solid #1a2b4c; }
+
+/* small helpers */
+.result-badge { font-weight: 600; color: #425; font-size: 0.95rem; opacity: 0.95; }
+
+@media (max-width: 520px) {
+    .btn-answer { min-width: 110px; padding: 0.7rem 1rem; }
+    #quiz-card { padding: 1.2rem; }
+}

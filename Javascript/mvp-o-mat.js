@@ -84,17 +84,15 @@ function calculateResult() {
     
     statements.forEach(stmt => {
         const userAns = userAnswers[stmt.id];
-        const mvpAns = stmt.mvp_position; nd
-        
+        const mvpAns = stmt.mvp_position;
 
         if (userAns === 'SKIP') {
-            return; 
+            return;
         }
-        
-        maxPossiblePoints += 2;
-        
-        let pointsForThisRound = 0;
 
+        maxPossiblePoints += 2;
+
+        let pointsForThisRound = 0;
         if (userAns === mvpAns) {
             pointsForThisRound = 2;
         } else if (userAns === 'NEUTRAL') {
@@ -102,20 +100,22 @@ function calculateResult() {
         } else {
             pointsForThisRound = 0;
         }
-        
         userPoints += pointsForThisRound;
-        
-        const translate = { "YES": "Zustimmung", "NO": "Ablehnung", "NEUTRAL": "Neutral", "SKIP": "Übersprungen" };
-        
+
+        const translate = { "YES": "Stimme zu", "NO": "Stimme nicht zu", "NEUTRAL": "Neutral", "SKIP": "Übersprungen" };
+
         comparisonHtml += `
-            <div style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px dashed #eee;">
-                <h4>${stmt.id}. ${stmt.title}</h4>
-                <p style="font-style: italic; color: #555;">"${stmt.text}"</p>
-                <p>Deine Antwort: <strong>${translate[userAns]}</strong> | MVP-Position: <strong>${translate[mvpAns]}</strong></p>
-                <div style="background: #f4f6f9; padding: 0.8rem; border-left: 4px solid #1a2b4c; margin-top: 0.5rem; font-size: 0.9rem;">
-                    <strong>Begründung der MVP:</strong> ${stmt.explanation || 'Keine Begründung hinterlegt.'}
+            <details class="result-item">
+                <summary>
+                    <span>${stmt.id}. ${stmt.title}</span>
+                    <span class="result-badge">${translate[userAns]} · MVP: ${translate[mvpAns]}</span>
+                </summary>
+                <div class="details-body">
+                    <p class="stmt-text">"${stmt.text}"</p>
+                    <p>Deine Antwort: <strong>${translate[userAns]}</strong> | MVP-Position: <strong>${translate[mvpAns]}</strong></p>
+                    <div class="mvp-expl"><strong>Begründung der MVP:</strong> ${stmt.explanation || 'Keine Begründung hinterlegt.'}</div>
                 </div>
-            </div>
+            </details>
         `;
     });
     

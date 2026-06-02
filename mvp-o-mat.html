@@ -45,13 +45,10 @@
                 <h2 id="statement-title" style="margin-top: 1rem;">Titel der These</h2>
                 <p id="statement-text" style="font-size: 1.2rem; margin: 2rem 0; min-height: 80px;">Lade Thesen...</p>
 
-                <div class="hero-ctas" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <button class="btn-answer" onclick="answerQuestion('YES')"
-                        style="background-color: #2e7d32; color: white; border: none; padding: 1rem 2rem; cursor: pointer; font-weight: bold;">Zustimmung</button>
-                    <button class="btn-answer" onclick="answerQuestion('NEUTRAL')"
-                        style="background-color: #757575; color: white; border: none; padding: 1rem 2rem; cursor: pointer; font-weight: bold;">Neutral</button>
-                    <button class="btn-answer" onclick="answerQuestion('NO')"
-                        style="background-color: #c62828; color: white; border: none; padding: 1rem 2rem; cursor: pointer; font-weight: bold;">Ablehnung</button>
+                <div class="hero-ctas">
+                    <button class="btn-answer vote-yes" onclick="answerQuestion('YES')" aria-label="Stimme zu">Stimme zu</button>
+                    <button class="btn-answer vote-neutral" onclick="answerQuestion('NEUTRAL')" aria-label="Neutral">Neutral</button>
+                    <button class="btn-answer vote-no" onclick="answerQuestion('NO')" aria-label="Stimme nicht zu">Stimme nicht zu</button>
                 </div>
 
                 <div style="margin-top: 1.5rem;">
