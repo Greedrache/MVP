@@ -294,3 +294,44 @@
 @media (max-width: 520px) {
     .choices-row .choice-pill { flex: 0 0 140px; }
 }
+
+@media (max-width: 440px) {
+    .choices-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .choices-row .choice-pill {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 320px;
+        box-sizing: border-box;
+    }
+
+    .stmt-text {
+        padding: 0.8rem;
+        font-size: 0.98rem;
+    }
+
+    .mvp-expl {
+        margin-top: 0.6rem;
+        padding: 0.9rem;
+        background: #ffffff;
+        border-left: 4px solid #1a2b4c;
+        box-shadow: 0 6px 18px rgba(10, 20, 30, 0.04);
+        border-radius: 8px;
+        color: #263238;
+        line-height: 1.5;
+    }
+}
+
+.mvp-expl {
+    margin-top: 0.8rem;
+    padding: 1rem;
+    background: linear-gradient(180deg,#fbfdff 0%, #f7fafc 100%);
+    border-left: 4px solid #1a2b4c;
+    border-radius: 6px;
+    color: #263238;
+    line-height: 1.5;
+}

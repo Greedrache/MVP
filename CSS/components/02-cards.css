@@ -1,0 +1,121 @@
+.summary-card {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #fdfaf6;
+  border-left: 6px solid #C0392B;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h2 {
+  color: #C0392B;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: 'Merriweather', Georgia, serif;
+}
+
+.summary-card p {
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.summary-card .more {
+  display: inline-block;
+  margin-top: 15px;
+  background: var(--mvp-accent-dark, #922B21);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(192, 57, 43, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-card .more:hover {
+  transform: translateY(-2px);
+  background: var(--mvp-accent, #C0392B);
+  box-shadow: 0 6px 16px rgba(192, 57, 43, 0.3);
+}
+
+@media (max-width: 600px) {
+  .summary-card {
+    padding: 15px 12px;
+    margin: 15px 8px;
+    border-left-width: 4px;
+  }
+  
+  .summary-card h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    hyphens: auto;
+    word-break: break-word;
+  }
+
+  .summary-card p {
+    font-size: 18px;
+    hyphens: auto;
+    word-break: break-word;
+  }
+}
+
+.fact {
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  min-width: 120px;
+  text-align: center;
+}
+
+.fact .num {
+  font-weight: 800;
+  color: #C0392B;
+  font-size: 1.2rem;
+}
+
+.fact .label {
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.policies {
+  max-width: 1100px;
+  margin: 20px auto 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  padding: 0 18px;
+}
+
+.policy {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+.policy h3 {
+  margin: 0 0 8px;
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 1.05rem;
+}
+
+.policy p {
+  margin: 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.policy .more {
+  margin-top: 10px;
+  display: inline-block;
+  color: #C0392B;
+  font-weight: 700;
+  text-decoration: none;
+}
