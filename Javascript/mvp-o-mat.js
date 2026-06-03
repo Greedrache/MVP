@@ -4,7 +4,6 @@ let userAnswers = {};
 
 const BACKEND_URL = "https://backendmvp.onrender.com/api/statements/";
 
-// DOM-Elemente
 const startBtn = document.getElementById('startMatBtn');
 const heroSection = document.getElementById('hero-section');
 const infoSection = document.getElementById('info-section');
@@ -19,7 +18,6 @@ if (startBtn) {
 }
 
 async function startMvpOMat() {
-    // 1. Oberflächen wechseln
     heroSection.style.display = 'none';
     infoSection.style.display = 'none';
     matContainer.style.display = 'block';
