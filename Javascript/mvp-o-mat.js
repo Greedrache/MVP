@@ -1,6 +1,6 @@
 let statements = [];
 let currentQuestionIndex = 0;
-let userAnswers = {}; 
+let userAnswers = {};
 
 const BACKEND_URL = "https://backendmvp.onrender.com/api/statements/";
 
@@ -23,7 +23,7 @@ async function startMvpOMat() {
     heroSection.style.display = 'none';
     infoSection.style.display = 'none';
     matContainer.style.display = 'block';
-    
+
     try {
         const response = await fetch(BACKEND_URL);
         if (!response.ok) {
@@ -32,26 +32,26 @@ async function startMvpOMat() {
         }
 
         statements = await response.json();
-        
-        if(statements.length > 15) {
+
+        if (statements.length > 15) {
             statements = statements.slice(0, 15);
         }
-        
+
         showQuestion();
     } catch (error) {
         console.error(error);
-            const stmtEl = document.getElementById('statement-text');
-            if (stmtEl) {
-                stmtEl.innerText = `Fehler beim Laden der Fragen: ${error.message}`;
-            }
+        const stmtEl = document.getElementById('statement-text');
+        if (stmtEl) {
+            stmtEl.innerText = `Fehler beim Laden der Fragen: ${error.message}`;
+        }
     }
 }
 
 function showQuestion() {
     if (statements.length === 0) return;
-    
+
     const currentStatement = statements[currentQuestionIndex];
-    
+
     document.getElementById('progress-bar').innerText = `These ${currentQuestionIndex + 1} von ${statements.length}`;
     document.getElementById('theme-tag').innerText = currentStatement.theme_name;
     document.getElementById('statement-title').innerText = currentStatement.title;
@@ -61,20 +61,20 @@ function showQuestion() {
 function answerQuestion(answer) {
     const currentStatement = statements[currentQuestionIndex];
     userAnswers[currentStatement.id] = answer;
-    
+
     nextStep();
 }
 
 function skipQuestion() {
     const currentStatement = statements[currentQuestionIndex];
     userAnswers[currentStatement.id] = 'SKIP';
-    
+
     nextStep();
 }
 
 function nextStep() {
     currentQuestionIndex++;
-    
+
     if (currentQuestionIndex < statements.length) {
         showQuestion();
     } else {
@@ -85,12 +85,12 @@ function nextStep() {
 function calculateResult() {
     quizCard.style.display = 'none';
     resultCard.style.display = 'block';
-    
+
     let maxPossiblePoints = 0;
     let userPoints = 0;
-    
+
     let comparisonHtml = "";
-    
+
     statements.forEach(stmt => {
         const userAns = userAnswers[stmt.id];
         const mvpAns = stmt.mvp_position;
@@ -111,25 +111,58 @@ function calculateResult() {
         }
         userPoints += pointsForThisRound;
 
-        const translate = { "YES": "Stimme zu", "NO": "Stimme nicht zu", "NEUTRAL": "Neutral", "SKIP": "Übersprungen" };
+        const translate = { "YES": "Zustimmung", "NO": "Ablehnung", "NEUTRAL": "Neutral", "SKIP": "Übersprungen" };
+        const matchClass = pointsForThisRound === 2 ? 'match' : (pointsForThisRound === 1 ? 'neutral' : 'nomatch');
 
         comparisonHtml += `
-            <details class="result-item">
-                <summary>
-                    <span>${stmt.id}. ${stmt.title}</span>
-                    <span class="result-badge">${translate[userAns]} · MVP: ${translate[mvpAns]}</span>
-                </summary>
-                <div class="details-body">
-                    <p class="stmt-text">"${stmt.text}"</p>
-                    <p>Deine Antwort: <strong>${translate[userAns]}</strong> | MVP-Position: <strong>${translate[mvpAns]}</strong></p>
-                    <div class="mvp-expl"><strong>Begründung der MVP:</strong> ${stmt.explanation || 'Keine Begründung hinterlegt.'}</div>
+        <details class="result-item">
+            <summary>
+                <div class="summary-left">
+                    <span class="theme-tag-small">${stmt.theme_name || 'Politik'}</span>
+                    <span class="result-title">${stmt.title}</span>
                 </div>
-            </details>
-        `;
+                <div class="toggle-icon" aria-hidden="true">+</div>
+            </summary>
+            <div class="details-body">
+                <div class="choices-row ${matchClass}">
+                    <span class="choice-pill">Du: ${translate[userAns]}</span>
+                    <span class="choice-pill">MVP: ${translate[mvpAns]}</span>
+                </div>
+                <p class="stmt-text">"${stmt.text}"</p>
+                <div class="mvp-expl"><strong>Begründung der MVP:</strong> ${stmt.explanation || 'Keine Begründung hinterlegt.'}</div>
+            </div>
+        </details>
+    `;
     });
-    
+
     const finalPercentage = maxPossiblePoints > 0 ? Math.round((userPoints / maxPossiblePoints) * 100) : 0;
-    
+
     document.getElementById('percentage-display').innerText = `${finalPercentage}%`;
     document.getElementById('comparison-list').innerHTML = comparisonHtml;
+
+    let feedbackText = "";
+    let feedbackColor = "#1a2b4c";
+
+    if (finalPercentage === 100) {
+        feedbackText = "Perfekte Übereinstimmung. Die MVP vertritt genau deine Werte. Werde jetzt Gründungsmitglied und gestalte die Zukunft mit.";
+        feedbackColor = "#2e7d32";
+    } else if (finalPercentage >= 80) {
+        feedbackText = "Hervorragendes Ergebnis. Deine politischen Standpunkte passen sehr gut zum Programm der MVP.";
+        feedbackColor = "#2e7d32";
+    } else if (finalPercentage >= 50) {
+        feedbackText = "Gute Schnittmenge. Du teilst die Mehrheit unserer Kernforderungen für eine transparente und moderne Politik.";
+        feedbackColor = "#f57c00";
+    } else if (finalPercentage >= 30) {
+        feedbackText = "Teilweise Übereinstimmung. Es gibt einige Gemeinsamkeiten, aber auch deutliche Unterschiede zu unseren Positionen.";
+        feedbackColor = "#f57c00";
+    } else {
+        feedbackText = "Geringe Übereinstimmung. Eine andere Partei wäre für dich vermutlich die bessere Wahl.";
+        feedbackColor = "#c62828";
+    }
+
+    const msgEl = document.getElementById('result-message');
+    if (msgEl) {
+        msgEl.innerText = feedbackText;
+        msgEl.style.color = feedbackColor;
+    }
 }

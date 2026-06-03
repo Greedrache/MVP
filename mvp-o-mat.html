@@ -36,8 +36,7 @@
             </div>
         </section>
 
-        <section id="mvpomat-container" class="fade-up"
-            style="display: none; max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+        <section id="mvpomat-container" class="fade-up" style="display: none; max-width: 800px; margin: 2rem auto;">
             <div id="quiz-card" class="about-card" style="text-align: center;">
                 <div id="progress-bar" style="margin-bottom: 1rem; color: #888;">Frage 1 von ...</div>
                 <span id="theme-tag"
@@ -46,9 +45,12 @@
                 <p id="statement-text" style="font-size: 1.2rem; margin: 2rem 0; min-height: 80px;">Lade Thesen...</p>
 
                 <div class="hero-ctas">
-                    <button class="btn-answer vote-yes" onclick="answerQuestion('YES')" aria-label="Stimme zu">Stimme zu</button>
-                    <button class="btn-answer vote-neutral" onclick="answerQuestion('NEUTRAL')" aria-label="Neutral">Neutral</button>
-                    <button class="btn-answer vote-no" onclick="answerQuestion('NO')" aria-label="Stimme nicht zu">Stimme nicht zu</button>
+                    <button class="btn-answer vote-yes" onclick="answerQuestion('YES')" aria-label="Stimme zu">Stimme
+                        zu</button>
+                    <button class="btn-answer vote-neutral" onclick="answerQuestion('NEUTRAL')"
+                        aria-label="Neutral">Neutral</button>
+                    <button class="btn-answer vote-no" onclick="answerQuestion('NO')"
+                        aria-label="Stimme nicht zu">Stimme nicht zu</button>
                 </div>
 
                 <div style="margin-top: 1.5rem;">
@@ -60,17 +62,26 @@
 
             <div id="result-card" class="about-card" style="display: none; text-align: center;">
                 <h2>Dein Ergebnis</h2>
+
                 <div id="percentage-display"
-                    style="font-size: 4rem; font-weight: bold; color: #1a2b4c; margin: 2rem 0;">0%</div>
-                <p>Übereinstimmung mit den Positionen der MVP (Moderne Volkspartei).</p>
+                    style="font-size: clamp(3.5rem, 8vw, 5rem); font-weight: 800; color: #1a2b4c; margin: 1rem 0 0.5rem 0; line-height: 1;">
+                    0%</div>
+
+
+                <p style="font-size: 1rem; color: #556; margin-bottom: 2.5rem;">Übereinstimmung mit den Positionen der
+                    MVP (Moderne Volkspartei)</p>
+
+                <div id="result-message"
+                    style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; display: inline-block; padding: 0.2rem 1rem;">
+                </div>
 
                 <div id="details-box"
-                    style="text-align: left; margin-top: 2rem; border-top: 1px solid #ccc; padding-top: 1rem;">
-                    <h3>Deine Antworten im Detailvergleich:</h3>
+                    style="text-align: left; margin-top: 2rem; border-top: 1px solid #e9edf2; padding-top: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem; color: #1a2b4c;">Deine Antworten im Detailvergleich:</h3>
                     <div id="comparison-list"></div>
                 </div>
 
-                <div class="hero-ctas" style="margin-top: 2rem;">
+                <div class="hero-ctas" style="margin-top: 2.5rem;">
                     <a class="btn-mvpomat-start" href="./mvp-o-mat.html">Test wiederholen</a>
                 </div>
             </div>
