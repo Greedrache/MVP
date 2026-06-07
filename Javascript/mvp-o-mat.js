@@ -31,8 +31,8 @@ async function startMvpOMat() {
 
         statements = await response.json();
 
-        if (statements.length > 15) {
-            statements = statements.slice(0, 15);
+        if (statements.length > 16) {
+            statements = statements.slice(0, 16);
         }
 
         showQuestion();
